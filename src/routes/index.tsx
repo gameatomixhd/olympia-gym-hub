@@ -121,8 +121,8 @@ function Index() {
 
         <div className="absolute inset-y-0 left-0 w-1 bar-brand" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20 text-brand-white">
+          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
             <span className="h-px w-8 bg-brand-red" /> Siracusa · Sala pesi
           </div>
           <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
@@ -130,7 +130,7 @@ function Index() {
             <br />
             <span className="text-gradient-brand">Diventa Olympia.</span>
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+          <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
             Il Centro Fitness Olympia è la palestra di riferimento a Siracusa per chi cerca
             un ambiente serio, attrezzature complete e una sala pesi pensata per allenarsi
             davvero.
@@ -144,12 +144,13 @@ function Index() {
             </a>
             <a
               href="#dove"
-              className="rounded-full border border-border px-8 py-4 text-sm font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
+              className="rounded-full border border-brand-white/40 bg-brand-white/5 px-8 py-4 text-sm font-bold uppercase tracking-widest text-brand-white backdrop-blur-sm transition-colors hover:bg-brand-white/15"
             >
               Vieni a trovarci
             </a>
           </div>
         </div>
+
       </section>
 
       {/* PALESTRA / SALA PESI */}
