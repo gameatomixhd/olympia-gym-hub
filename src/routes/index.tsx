@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-gym.jpg";
 import salaPesiImg from "@/assets/salapesi.jpg";
-import { MapPin, Phone, MessageCircle, Clock, Dumbbell, Menu, X } from "lucide-react";
+import logoAsset from "@/assets/olympia-logo.png.asset.json";
+import { MapPin, Phone, MessageCircle, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/")({
