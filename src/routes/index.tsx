@@ -34,16 +34,16 @@ function Index() {
   ];
 
   const reviews = [
-    { name: "Giuseppe Nucifora", text: "Palestra super attrezzata. Istruttori fantastici, disponibili e gentilissimi. Ambiente pulito e confortevole." },
-    { name: "Aurora Sultano", text: "Palestra Super! L'ambiente è accogliente e pulito, le attrezzature sono moderne e ben mantenute. Una vasta gamma di attrezzi per ogni tipo di allenamento." },
-    { name: "Jennifer Bianchettini", text: "Frequento questa palestra già da due anni e mi trovo benissimo: super fornita, attrezzi sempre nuovi, proprietari gentilissimi. La consiglio!" },
-    { name: "Veronica Savona", text: "Questa palestra è davvero speciale! Attrezzature di ultima generazione, ambienti curati e puliti, e un'atmosfera che ti fa sentire parte di una famiglia." },
-    { name: "Emanuele Ricciardini", text: "Ho trovato un ambiente di allenamento eccellente grazie alla competenza e professionalità dello staff, sempre attento, preparato e disponibile." },
-    { name: "Seby Tour Ortigia", text: "Palestra ben fornita, pulizia massima. Prezzi unici in tutta Siracusa con abbonamento annuale super conveniente." },
-    { name: "Peppe Cassisi", text: "Palestra di pesistica completa di ogni attrezzo. Area ampia. Proprietari cortesi e disponibili. Consigliata." },
-    { name: "Concetto Genovese", text: "Palestra pulita, ragazzo alla reception gentilissimo e competente, con macchinari TOP." },
-    { name: "Marzia Donato", text: "Più di una famiglia, la mia seconda casa." },
-    { name: "Orazio Nicosia", text: "Igiene, cordialità e professionalità oltre ogni limite. Praticamente casa." },
+    { name: "Giuseppe", text: "Palestra super attrezzata. Istruttori fantastici, disponibili e gentilissimi. Ambiente pulito e confortevole." },
+    { name: "Aurora", text: "Palestra Super! L'ambiente è accogliente e pulito, le attrezzature sono moderne e ben mantenute. Una vasta gamma di attrezzi per ogni tipo di allenamento." },
+    { name: "Jennifer", text: "Frequento questa palestra già da due anni e mi trovo benissimo: super fornita, attrezzi sempre nuovi, proprietari gentilissimi. La consiglio!" },
+    { name: "Veronica", text: "Questa palestra è davvero speciale! Attrezzature di ultima generazione, ambienti curati e puliti, e un'atmosfera che ti fa sentire parte di una famiglia." },
+    { name: "Emanuele", text: "Ho trovato un ambiente di allenamento eccellente grazie alla competenza e professionalità dello staff, sempre attento, preparato e disponibile." },
+    { name: "Seby", text: "Palestra ben fornita, pulizia massima. Prezzi unici in tutta Siracusa con abbonamento annuale super conveniente." },
+    { name: "Peppe", text: "Palestra di pesistica completa di ogni attrezzo. Area ampia. Proprietari cortesi e disponibili. Consigliata." },
+    { name: "Concetto", text: "Palestra pulita, ragazzo alla reception gentilissimo e competente, con macchinari TOP." },
+    { name: "Marzia", text: "Più di una famiglia, la mia seconda casa." },
+    { name: "Orazio", text: "Igiene, cordialità e professionalità oltre ogni limite. Praticamente casa." },
   ];
 
   return (
@@ -109,19 +109,20 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
+      <section id="top" className="relative flex min-h-screen items-center overflow-hidden bg-ink">
         <img
           src={heroImg}
           alt="Sala pesi Centro Fitness Olympia"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full object-cover opacity-55"
           width={1920}
           height={1280}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-background" />
+
         <div className="absolute inset-y-0 left-0 w-1 bar-brand" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20 text-brand-white">
+          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
             <span className="h-px w-8 bg-brand-red" /> Siracusa · Sala pesi
           </div>
           <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
@@ -129,7 +130,7 @@ function Index() {
             <br />
             <span className="text-gradient-brand">Diventa Olympia.</span>
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+          <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
             Il Centro Fitness Olympia è la palestra di riferimento a Siracusa per chi cerca
             un ambiente serio, attrezzature complete e una sala pesi pensata per allenarsi
             davvero.
@@ -143,12 +144,13 @@ function Index() {
             </a>
             <a
               href="#dove"
-              className="rounded-full border border-border px-8 py-4 text-sm font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
+              className="rounded-full border border-brand-white/40 bg-brand-white/5 px-8 py-4 text-sm font-bold uppercase tracking-widest text-brand-white backdrop-blur-sm transition-colors hover:bg-brand-white/15"
             >
               Vieni a trovarci
             </a>
           </div>
         </div>
+
       </section>
 
       {/* PALESTRA / SALA PESI */}
