@@ -109,15 +109,16 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
+      <section id="top" className="relative flex min-h-screen items-center overflow-hidden bg-ink">
         <img
           src={heroImg}
           alt="Sala pesi Centro Fitness Olympia"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full object-cover opacity-55"
           width={1920}
           height={1280}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-background" />
+
         <div className="absolute inset-y-0 left-0 w-1 bar-brand" />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20">
