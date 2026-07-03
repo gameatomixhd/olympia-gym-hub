@@ -442,34 +442,39 @@ function Index() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((r) => (
+            {reviews.map((r, idx) => (
               <article
                 key={r.name}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-red"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_hsl(var(--brand-red)/0.4)]"
               >
-                <Quote className="absolute right-6 top-6 h-10 w-10 text-brand-red/10" />
+                <div className="absolute inset-x-0 top-0 h-1 bar-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <Quote className="absolute right-6 top-6 h-16 w-16 text-brand-red/10" strokeWidth={1} />
                 <div className="flex gap-1">
                   {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-6 w-6 fill-brand-red text-brand-red" />
+                    <Star key={i} className="h-5 w-5 fill-brand-red text-brand-red" />
                   ))}
                 </div>
                 <p className="mt-6 flex-1 text-base leading-relaxed text-foreground/90">
                   "{r.text}"
                 </p>
-                <div className="mt-6 flex items-center gap-3 border-t border-border/60 pt-4">
-                  <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-green/20 font-display text-lg text-brand-green">
+                <div className="mt-8 flex items-center gap-3 border-t border-border/60 pt-5">
+                  <div
+                    className={`flex h-11 w-11 flex-none items-center justify-center rounded-full font-display text-lg ${
+                      idx % 3 === 0
+                        ? "bg-brand-red/15 text-brand-red"
+                        : idx % 3 === 1
+                        ? "bg-brand-green/15 text-brand-green"
+                        : "bg-foreground/10 text-foreground"
+                    }`}
+                  >
                     {r.name.charAt(0)}
                   </div>
-                  <div>
-                    <div className="font-display text-lg tracking-wider">{r.name}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                      Recensione Google
-                    </div>
-                  </div>
+                  <div className="font-display text-lg tracking-wider">{r.name}</div>
                 </div>
               </article>
             ))}
           </div>
+
 
           <div className="mt-12 flex justify-center">
             <a
@@ -485,19 +490,27 @@ function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-border/50 py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
+      <footer className="border-t border-border/50 py-16">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center">
+          <img
+            src={logoAsset.url}
+            alt="Logo Centro Fitness Olympia"
+            className="h-32 w-32 rounded-full shadow-[0_10px_40px_-10px_hsl(var(--brand-red)/0.5)]"
+          />
           <div className="flex items-center gap-2">
             <div className="bar-brand h-3 w-3 rounded-sm" />
-            <span className="font-display text-lg tracking-wider">
+            <span className="font-display text-xl tracking-wider">
               CENTRO FITNESS OLYMPIA
             </span>
+            <div className="bar-brand h-3 w-3 rounded-sm" />
           </div>
+          <p className="text-sm text-muted-foreground">{GYM.address}</p>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Centro Fitness Olympia · Siracusa
           </p>
         </div>
       </footer>
+
     </div>
   );
 }
