@@ -29,7 +29,21 @@ function Index() {
     { label: "Promo", href: "#promo" },
     { label: "Orari", href: "#orari" },
     { label: "Dove Siamo", href: "#dove" },
+    { label: "Recensioni", href: "#recensioni" },
     { label: "Contatti", href: "#contatti" },
+  ];
+
+  const reviews = [
+    { name: "Giuseppe Nucifora", text: "Palestra super attrezzata. Istruttori fantastici, disponibili e gentilissimi. Ambiente pulito e confortevole." },
+    { name: "Aurora Sultano", text: "Palestra Super! L'ambiente è accogliente e pulito, le attrezzature sono moderne e ben mantenute. Una vasta gamma di attrezzi per ogni tipo di allenamento." },
+    { name: "Jennifer Bianchettini", text: "Frequento questa palestra già da due anni e mi trovo benissimo: super fornita, attrezzi sempre nuovi, proprietari gentilissimi. La consiglio!" },
+    { name: "Veronica Savona", text: "Questa palestra è davvero speciale! Attrezzature di ultima generazione, ambienti curati e puliti, e un'atmosfera che ti fa sentire parte di una famiglia." },
+    { name: "Emanuele Ricciardini", text: "Ho trovato un ambiente di allenamento eccellente grazie alla competenza e professionalità dello staff, sempre attento, preparato e disponibile." },
+    { name: "Seby Tour Ortigia", text: "Palestra ben fornita, pulizia massima. Prezzi unici in tutta Siracusa con abbonamento annuale super conveniente." },
+    { name: "Peppe Cassisi", text: "Palestra di pesistica completa di ogni attrezzo. Area ampia. Proprietari cortesi e disponibili. Consigliata." },
+    { name: "Concetto Genovese", text: "Palestra pulita, ragazzo alla reception gentilissimo e competente, con macchinari TOP." },
+    { name: "Marzia Donato", text: "Più di una famiglia, la mia seconda casa." },
+    { name: "Orazio Nicosia", text: "Igiene, cordialità e professionalità oltre ogni limite. Praticamente casa." },
   ];
 
   return (
