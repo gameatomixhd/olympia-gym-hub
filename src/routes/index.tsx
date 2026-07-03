@@ -416,6 +416,74 @@ function Index() {
         </div>
       </section>
 
+      {/* RECENSIONI */}
+      <section id="recensioni" className="border-t border-border/50 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-green">
+            <Star className="h-4 w-4" /> Recensioni Google
+          </div>
+          <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <h2 className="text-5xl md:text-6xl">
+              Le voci dei
+              <br />
+              <span className="text-gradient-brand">nostri atleti.</span>
+            </h2>
+            <div className="flex items-center gap-4">
+              <div className="flex">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <Star key={i} className="h-8 w-8 fill-brand-red text-brand-red" />
+                ))}
+              </div>
+              <div>
+                <div className="font-display text-3xl leading-none">5,0</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">su Google</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {reviews.map((r) => (
+              <article
+                key={r.name}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-red"
+              >
+                <Quote className="absolute right-6 top-6 h-10 w-10 text-brand-red/10" />
+                <div className="flex gap-1">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="h-6 w-6 fill-brand-red text-brand-red" />
+                  ))}
+                </div>
+                <p className="mt-6 flex-1 text-base leading-relaxed text-foreground/90">
+                  "{r.text}"
+                </p>
+                <div className="mt-6 flex items-center gap-3 border-t border-border/60 pt-4">
+                  <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-brand-green/20 font-display text-lg text-brand-green">
+                    {r.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="font-display text-lg tracking-wider">{r.name}</div>
+                    <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                      Recensione Google
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <a
+              href={`https://www.google.com/maps?q=${GYM.mapsQuery}`}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border px-8 py-4 text-sm font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
+            >
+              Leggi tutte le recensioni su Google
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="border-t border-border/50 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
