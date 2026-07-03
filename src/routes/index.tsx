@@ -159,30 +159,76 @@ function Index() {
               <Dumbbell className="h-4 w-4" /> La nostra filosofia
             </div>
             <h2 className="mt-6 text-5xl md:text-6xl">
-              Una vera sala pesi.
+              700 mq di
               <br />
-              Niente distrazioni.
+              <span className="text-gradient-brand">pura sala pesi.</span>
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Da Olympia trovi tutto quello che ti serve per allenarti sul serio:
-              bilancieri olimpici, rack, panche, macchinari isotonici e cavi. Uno spazio
-              curato, con lo staff sempre disponibile per consigliarti.
+              Il Centro Fitness Olympia è una palestra di circa <strong className="text-foreground">700 mq</strong>{" "}
+              interamente dedicata alla sala pesi, con macchinari professionali{" "}
+              <strong className="text-foreground">Panatta</strong>. Un ambiente{" "}
+              <strong className="text-foreground">ampio, arieggiato e ad altezza strada</strong> —
+              niente scantinati, solo luce e aria vera.
             </p>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
-                "Bilancieri e pesi olimpici",
-                "Rack e panche professionali",
-                "Macchinari isotonici",
-                "Zona cavi e funzionale",
-                "Spogliatoi con docce",
-                "Staff qualificato",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3 text-sm">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-brand-red" />
-                  {f}
+                { icon: Building2, text: "Macchinari Panatta professionali" },
+                { icon: Ruler, text: "Circa 700 mq di spazio" },
+                { icon: Wind, text: "Ambiente arieggiato, ad altezza strada" },
+                { icon: Dumbbell, text: "Bilancieri, rack, panche e cavi" },
+                { icon: Users, text: "Istruttori sempre disponibili" },
+                { icon: Dumbbell, text: "Spogliatoi con docce" },
+              ].map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-start gap-3 text-sm">
+                  <Icon className="mt-0.5 h-4 w-4 flex-none text-brand-red" />
+                  {text}
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* SCHEDE GRATUITE */}
+        <div className="mx-auto mt-24 max-w-7xl px-6">
+          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 md:p-12">
+            <div className="absolute inset-x-0 top-0 h-1 bar-brand" />
+            <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-center">
+              <div className="inline-flex rounded-full border border-brand-green/40 bg-brand-green/10 px-5 py-2 text-xs font-bold uppercase tracking-widest text-brand-green">
+                100% Gratuite
+              </div>
+              <h3 className="font-display text-4xl leading-none md:text-5xl">
+                Schede di allenamento <span className="text-gradient-brand">gratuite</span>,
+                su misura per te.
+              </h3>
+            </div>
+            <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
+              Da noi la scheda è <strong className="text-foreground">sempre inclusa</strong>:
+              nessun costo aggiuntivo, nessun pacchetto da acquistare. Scegli il formato
+              che preferisci.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              <div className="rounded-xl border border-border/60 p-6">
+                <Smartphone className="h-6 w-6 text-brand-green" />
+                <div className="mt-4 font-display text-2xl tracking-wider">Via App</div>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Scheda digitale sempre con te sullo smartphone, con esercizi, serie,
+                  ripetizioni e note dell'istruttore.
+                </p>
+              </div>
+              <div className="rounded-xl border border-border/60 p-6">
+                <FileText className="h-6 w-6 text-brand-red" />
+                <div className="mt-4 font-display text-2xl tracking-wider">Cartacea</div>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Scheda cartacea personalizzata, stampata su misura per te. Semplice,
+                  chiara, sempre a portata di mano.
+                </p>
+              </div>
+            </div>
+            <p className="mt-6 flex items-start gap-3 text-sm text-muted-foreground">
+              <Users className="mt-0.5 h-4 w-4 flex-none text-brand-red" />
+              I nostri istruttori sono <strong className="text-foreground">sempre presenti in sala</strong>{" "}
+              per correggere, motivare e adattare l'allenamento ai tuoi obiettivi.
+            </p>
           </div>
         </div>
       </section>
