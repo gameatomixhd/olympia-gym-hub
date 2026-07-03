@@ -37,9 +37,9 @@ function Index() {
       {/* NAV */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#top" className="flex items-center gap-2">
-            <div className="bar-brand h-3 w-3 rounded-sm" />
-            <span className="font-display text-xl tracking-wider">
+          <a href="#top" className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-10 w-10 rounded-full" />
+            <span className="font-display text-xl tracking-wider hidden sm:inline">
               OLYMPIA<span className="text-brand-red">.</span>
             </span>
           </a>
