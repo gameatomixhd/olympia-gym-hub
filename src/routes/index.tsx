@@ -490,19 +490,27 @@ function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-border/50 py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
+      <footer className="border-t border-border/50 py-16">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center">
+          <img
+            src={logoAsset.url}
+            alt="Logo Centro Fitness Olympia"
+            className="h-32 w-32 rounded-full shadow-[0_10px_40px_-10px_hsl(var(--brand-red)/0.5)]"
+          />
           <div className="flex items-center gap-2">
             <div className="bar-brand h-3 w-3 rounded-sm" />
-            <span className="font-display text-lg tracking-wider">
+            <span className="font-display text-xl tracking-wider">
               CENTRO FITNESS OLYMPIA
             </span>
+            <div className="bar-brand h-3 w-3 rounded-sm" />
           </div>
+          <p className="text-sm text-muted-foreground">{GYM.address}</p>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Centro Fitness Olympia · Siracusa
           </p>
         </div>
       </footer>
+
     </div>
   );
 }
