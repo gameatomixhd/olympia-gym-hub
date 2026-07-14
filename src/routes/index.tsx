@@ -2,7 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-gym.jpg";
 import salaPesiImg from "@/assets/salapesi.jpg";
 import logoAsset from "@/assets/olympia-logo.png.asset.json";
-import { MapPin, Phone, MessageCircle, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote } from "lucide-react";
+import galReception from "@/assets/gallery/reception.jpg.asset.json";
+import galSala1 from "@/assets/gallery/sala1.jpg.asset.json";
+import galSala2 from "@/assets/gallery/sala2.jpg.asset.json";
+import galManubri from "@/assets/gallery/manubri.jpg.asset.json";
+import galPanche from "@/assets/gallery/panche.jpg.asset.json";
+import galCardio from "@/assets/gallery/cardio.jpg.asset.json";
+import galMacchinari from "@/assets/gallery/macchinari.jpg.asset.json";
+import { MapPin, Phone, MessageCircle, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -26,12 +33,24 @@ function Index() {
   const [open, setOpen] = useState(false);
   const nav = [
     { label: "Palestra", href: "#palestra" },
+    { label: "Gallery", href: "#gallery" },
     { label: "Promo", href: "#promo" },
     { label: "Orari", href: "#orari" },
     { label: "Dove Siamo", href: "#dove" },
     { label: "Recensioni", href: "#recensioni" },
     { label: "Contatti", href: "#contatti" },
   ];
+
+  const gallery = [
+    { src: galReception.url, alt: "Reception Centro Fitness Olympia", span: "md:col-span-2 md:row-span-2" },
+    { src: galSala1.url, alt: "Sala pesi con macchinari Panatta", span: "" },
+    { src: galManubri.url, alt: "Area manubri e panche", span: "" },
+    { src: galSala2.url, alt: "Vista panoramica della sala pesi", span: "md:col-span-2" },
+    { src: galCardio.url, alt: "Zona cardio con tapis roulant Life Fitness", span: "" },
+    { src: galPanche.url, alt: "Panche Panatta e rastrelliera manubri", span: "" },
+    { src: galMacchinari.url, alt: "Macchinari isotonici Panatta", span: "md:col-span-2" },
+  ];
+
 
   const reviews = [
     { name: "Giuseppe", text: "Palestra super attrezzata. Istruttori fantastici, disponibili e gentilissimi. Ambiente pulito e confortevole." },
@@ -311,7 +330,50 @@ function Index() {
         </div>
       </section>
 
-      {/* ORARI */}
+      {/* GALLERY */}
+      <section id="gallery" className="border-t border-border/50 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
+                <Camera className="h-4 w-4" /> Gallery
+              </div>
+              <h2 className="mt-6 text-5xl md:text-6xl">
+                Dai un'occhiata
+                <br />
+                <span className="text-gradient-brand">alla palestra.</span>
+              </h2>
+            </div>
+            <p className="max-w-md text-lg text-muted-foreground">
+              700mq di sala pesi, macchinari Panatta, area cardio e ambiente ad altezza strada, luminoso e arieggiato.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-[220px]">
+            {gallery.map((g, i) => (
+              <div
+                key={g.src}
+                className={`group relative overflow-hidden rounded-2xl border border-border/60 opacity-0 animate-fade-in ${g.span}`}
+                style={{ animationDelay: `${i * 90}ms`, animationFillMode: "forwards" }}
+              >
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 p-4 text-sm text-brand-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  {g.alt}
+                </div>
+                <div className="pointer-events-none absolute inset-0 ring-0 ring-brand-red/0 transition-all duration-300 group-hover:ring-2 group-hover:ring-brand-red/60" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section id="orari" className="border-t border-border/50 py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-3">
           <div className="md:col-span-1">
