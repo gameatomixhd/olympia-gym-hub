@@ -33,12 +33,24 @@ function Index() {
   const [open, setOpen] = useState(false);
   const nav = [
     { label: "Palestra", href: "#palestra" },
+    { label: "Gallery", href: "#gallery" },
     { label: "Promo", href: "#promo" },
     { label: "Orari", href: "#orari" },
     { label: "Dove Siamo", href: "#dove" },
     { label: "Recensioni", href: "#recensioni" },
     { label: "Contatti", href: "#contatti" },
   ];
+
+  const gallery = [
+    { src: galReception.url, alt: "Reception Centro Fitness Olympia", span: "md:col-span-2 md:row-span-2" },
+    { src: galSala1.url, alt: "Sala pesi con macchinari Panatta", span: "" },
+    { src: galManubri.url, alt: "Area manubri e panche", span: "" },
+    { src: galSala2.url, alt: "Vista panoramica della sala pesi", span: "md:col-span-2" },
+    { src: galCardio.url, alt: "Zona cardio con tapis roulant Life Fitness", span: "" },
+    { src: galPanche.url, alt: "Panche Panatta e rastrelliera manubri", span: "" },
+    { src: galMacchinari.url, alt: "Macchinari isotonici Panatta", span: "md:col-span-2" },
+  ];
+
 
   const reviews = [
     { name: "Giuseppe", text: "Palestra super attrezzata. Istruttori fantastici, disponibili e gentilissimi. Ambiente pulito e confortevole." },
