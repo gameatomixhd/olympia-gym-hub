@@ -330,7 +330,50 @@ function Index() {
         </div>
       </section>
 
-      {/* ORARI */}
+      {/* GALLERY */}
+      <section id="gallery" className="border-t border-border/50 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
+                <Camera className="h-4 w-4" /> Gallery
+              </div>
+              <h2 className="mt-6 text-5xl md:text-6xl">
+                Dai un'occhiata
+                <br />
+                <span className="text-gradient-brand">alla palestra.</span>
+              </h2>
+            </div>
+            <p className="max-w-md text-lg text-muted-foreground">
+              700mq di sala pesi, macchinari Panatta, area cardio e ambiente ad altezza strada, luminoso e arieggiato.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-[220px]">
+            {gallery.map((g, i) => (
+              <div
+                key={g.src}
+                className={`group relative overflow-hidden rounded-2xl border border-border/60 opacity-0 animate-fade-in ${g.span}`}
+                style={{ animationDelay: `${i * 90}ms`, animationFillMode: "forwards" }}
+              >
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 p-4 text-sm text-brand-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  {g.alt}
+                </div>
+                <div className="pointer-events-none absolute inset-0 ring-0 ring-brand-red/0 transition-all duration-300 group-hover:ring-2 group-hover:ring-brand-red/60" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section id="orari" className="border-t border-border/50 py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-3">
           <div className="md:col-span-1">
