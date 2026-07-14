@@ -2,7 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-gym.jpg";
 import salaPesiImg from "@/assets/salapesi.jpg";
 import logoAsset from "@/assets/olympia-logo.png.asset.json";
-import { MapPin, Phone, MessageCircle, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote } from "lucide-react";
+import galReception from "@/assets/gallery/reception.jpg.asset.json";
+import galSala1 from "@/assets/gallery/sala1.jpg.asset.json";
+import galSala2 from "@/assets/gallery/sala2.jpg.asset.json";
+import galManubri from "@/assets/gallery/manubri.jpg.asset.json";
+import galPanche from "@/assets/gallery/panche.jpg.asset.json";
+import galCardio from "@/assets/gallery/cardio.jpg.asset.json";
+import galMacchinari from "@/assets/gallery/macchinari.jpg.asset.json";
+import { MapPin, Phone, MessageCircle, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/")({
