@@ -447,7 +447,7 @@ function Index() {
             {reviews.map((r, idx) => (
               <article
                 key={r.name}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_hsl(var(--brand-red)/0.4)]"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_oklch(0.62_0.22_25/0.4)]"
               >
                 <div className="absolute inset-x-0 top-0 h-1 bar-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <Quote className="absolute right-6 top-6 h-16 w-16 text-brand-red/10" strokeWidth={1} />
