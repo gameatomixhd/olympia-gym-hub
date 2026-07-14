@@ -497,7 +497,7 @@ function Index() {
           <img
             src={logoAsset.url}
             alt="Logo Centro Fitness Olympia"
-            className="h-32 w-32 rounded-full shadow-[0_10px_40px_-10px_hsl(var(--brand-red)/0.5)]"
+            className="h-32 w-32 rounded-full shadow-[0_10px_40px_-10px_oklch(0.62_0.22_25/0.5)]"
           />
           <div className="flex items-center gap-2">
             <div className="bar-brand h-3 w-3 rounded-sm" />
