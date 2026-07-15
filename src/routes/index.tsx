@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-gym.jpg";
 import salaPesiImg from "@/assets/salapesi.jpg";
+import schedeImg from "@/assets/schede.jpg";
 import logoAsset from "@/assets/olympia-logo.png.asset.json";
 import galReception from "@/assets/gallery/reception.jpg.asset.json";
 import galSala1 from "@/assets/gallery/sala1.jpg.asset.json";
@@ -225,45 +226,68 @@ function Index() {
 
         {/* SCHEDE GRATUITE */}
         <div className="mx-auto mt-24 max-w-7xl px-6">
-          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-8 md:p-12">
+          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-card/40 shadow-[var(--shadow-card)]">
             <div className="absolute inset-x-0 top-0 h-1 bar-brand" />
-            <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-center">
-              <div className="inline-flex rounded-full border border-brand-green/40 bg-brand-green/10 px-5 py-2 text-xs font-bold uppercase tracking-widest text-brand-green">
-                100% Gratuite
+            <div className="grid gap-0 lg:grid-cols-2">
+              <div className="relative min-h-[320px] overflow-hidden lg:min-h-full">
+                <img
+                  src={schedeImg}
+                  alt="Istruttore che mostra una scheda di allenamento personalizzata al cliente"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  width={1280}
+                  height={1280}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent lg:bg-gradient-to-r" />
+                <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-background/70 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-brand-green backdrop-blur">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+                  100% Gratuite
+                </div>
               </div>
-              <h3 className="font-display text-4xl leading-none md:text-5xl">
-                Schede di allenamento <span className="text-gradient-brand">gratuite</span>,
-                su misura per te.
-              </h3>
-            </div>
-            <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-              Da noi la scheda è <strong className="text-foreground">sempre inclusa</strong>:
-              nessun costo aggiuntivo, nessun pacchetto da acquistare. Scegli il formato
-              che preferisci.
-            </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              <div className="rounded-xl border border-border/60 p-6">
-                <Smartphone className="h-6 w-6 text-brand-green" />
-                <div className="mt-4 font-display text-2xl tracking-wider">Via App</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Scheda digitale sempre con te sullo smartphone, con esercizi, serie,
-                  ripetizioni e note dell'istruttore.
+              <div className="p-8 md:p-12">
+                <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
+                  <FileText className="h-4 w-4" /> Schede di allenamento
+                </div>
+                <h3 className="mt-5 font-display text-4xl leading-none md:text-5xl">
+                  Sempre <span className="text-gradient-brand">gratuite</span>,
+                  <br />su misura per te.
+                </h3>
+                <p className="mt-5 text-base text-muted-foreground md:text-lg">
+                  Da noi la scheda è <strong className="text-foreground">sempre inclusa</strong>:
+                  nessun costo aggiuntivo, nessun pacchetto da acquistare. Scegli il formato
+                  che preferisci.
                 </p>
-              </div>
-              <div className="rounded-xl border border-border/60 p-6">
-                <FileText className="h-6 w-6 text-brand-red" />
-                <div className="mt-4 font-display text-2xl tracking-wider">Cartacea</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Scheda cartacea personalizzata, stampata su misura per te. Semplice,
-                  chiara, sempre a portata di mano.
-                </p>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  <div className="group rounded-xl border border-border/60 bg-background/40 p-5 transition-all hover:-translate-y-1 hover:border-brand-green/50">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/10 text-brand-green">
+                      <Smartphone className="h-5 w-5" />
+                    </div>
+                    <div className="mt-4 font-display text-2xl tracking-wider">Via App</div>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Scheda digitale sempre con te sullo smartphone, con esercizi, serie
+                      e note dell'istruttore.
+                    </p>
+                  </div>
+                  <div className="group rounded-xl border border-border/60 bg-background/40 p-5 transition-all hover:-translate-y-1 hover:border-brand-red/50">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-red/10 text-brand-red">
+                      <FileText className="h-5 w-5" />
+                    </div>
+                    <div className="mt-4 font-display text-2xl tracking-wider">Cartacea</div>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Scheda cartacea personalizzata, stampata su misura per te. Semplice
+                      e sempre a portata di mano.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-6 flex items-start gap-3 rounded-xl border border-border/50 bg-background/30 p-4 text-sm text-muted-foreground">
+                  <Users className="mt-0.5 h-4 w-4 flex-none text-brand-red" />
+                  <span>
+                    I nostri istruttori sono <strong className="text-foreground">sempre presenti in sala</strong>{" "}
+                    per correggere, motivare e adattare l'allenamento ai tuoi obiettivi.
+                  </span>
+                </div>
               </div>
             </div>
-            <p className="mt-6 flex items-start gap-3 text-sm text-muted-foreground">
-              <Users className="mt-0.5 h-4 w-4 flex-none text-brand-red" />
-              I nostri istruttori sono <strong className="text-foreground">sempre presenti in sala</strong>{" "}
-              per correggere, motivare e adattare l'allenamento ai tuoi obiettivi.
-            </p>
           </div>
         </div>
       </section>
@@ -321,10 +345,6 @@ function Index() {
                   <Phone className="h-4 w-4" /> Chiama ora
                 </a>
               </div>
-              <p className="text-xs text-muted-foreground">
-                Tip: sostituisci il file <code className="rounded bg-muted px-1 py-0.5">public/promo-mese.jpg</code> ogni
-                mese con la nuova grafica.
-              </p>
             </div>
           </div>
         </div>
