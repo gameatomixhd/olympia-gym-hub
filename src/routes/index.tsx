@@ -81,8 +81,8 @@ function Index() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-3">
             <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-10 w-10 rounded-full" />
-            <span className="font-display text-xl tracking-wider hidden sm:inline">
-              OLYMPIA<span className="text-brand-red">.</span>
+            <span className="font-display hidden text-base tracking-wider whitespace-nowrap md:inline">
+              ALZA LA SBARRA <span className="text-brand-red font-bold">DIVENTA OLYMPIA</span>
             </span>
           </a>
           <nav className="hidden gap-8 md:flex">
@@ -154,9 +154,8 @@ function Index() {
             <span className="h-px w-8 bg-brand-red" /> Siracusa · Sala pesi
           </div>
           <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
-            <span className="text-brand-white">Alza la sbarra.</span>
-            <br />
-            <span className="text-brand-red font-bold">Diventa Olympia.</span>
+            <span className="text-brand-white">Alza la sbarra </span>
+            <span className="text-brand-red font-bold">Diventa Olympia</span>
           </h1>
           <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
             Il Centro Fitness Olympia è la palestra di riferimento a Siracusa per chi cerca
