@@ -361,7 +361,7 @@ function Index() {
               <h2 className="mt-6 text-5xl md:text-6xl">
                 Dai un'occhiata
                 <br />
-                <span className="text-gradient-brand">alla palestra.</span>
+                <span className="text-brand-red font-bold">alla palestra.</span>
               </h2>
             </div>
             <p className="max-w-md text-lg text-muted-foreground">
@@ -428,7 +428,7 @@ function Index() {
               </div>
               <h2 className="mt-6 text-5xl md:text-6xl">
                 In pieno centro
-                <br />a <span className="text-gradient-brand">Siracusa</span>.
+                <br />a <span className="text-brand-red font-bold">Siracusa</span>.
               </h2>
             </div>
             <p className="text-lg text-muted-foreground">
@@ -510,7 +510,7 @@ function Index() {
             <h2 className="text-5xl md:text-6xl">
               Le voci dei
               <br />
-              <span className="text-gradient-brand">nostri atleti.</span>
+              <span className="text-brand-red font-bold">nostri atleti.</span>
             </h2>
             <div className="flex items-center gap-4">
               <div className="flex">
