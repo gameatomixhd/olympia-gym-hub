@@ -139,16 +139,16 @@ function Index() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-background" />
 
-        <div className="absolute inset-y-0 left-0 w-1 bar-brand" />
+        
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20 text-brand-white">
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
             <span className="h-px w-8 bg-brand-red" /> Siracusa · Sala pesi
           </div>
           <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
-            Alza la sbarra.
+            <span className="text-brand-white">Alza la sbarra.</span>
             <br />
-            <span className="text-gradient-brand">Diventa Olympia.</span>
+            <span className="text-brand-red font-bold">Diventa Olympia.</span>
           </h1>
           <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
             Il Centro Fitness Olympia è la palestra di riferimento a Siracusa per chi cerca
@@ -197,7 +197,7 @@ function Index() {
             <h2 className="mt-6 text-5xl md:text-6xl">
               700 mq di
               <br />
-              <span className="text-gradient-brand">pura sala pesi.</span>
+              <span className="text-brand-red font-bold">pura sala pesi.</span>
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
               Il Centro Fitness Olympia è una palestra di circa <strong className="text-foreground">700 mq</strong>{" "}
@@ -249,7 +249,7 @@ function Index() {
                   <FileText className="h-4 w-4" /> Schede di allenamento
                 </div>
                 <h3 className="mt-5 font-display text-4xl leading-none md:text-5xl">
-                  Sempre <span className="text-gradient-brand">gratuite</span>,
+                  Sempre <span className="text-brand-red font-bold">gratuite</span>,
                   <br />su misura per te.
                 </h3>
                 <p className="mt-5 text-base text-muted-foreground md:text-lg">
@@ -300,7 +300,7 @@ function Index() {
             <span className="h-px w-8 bg-brand-red" /> Solo per questo mese
           </div>
           <h2 className="mt-6 max-w-3xl text-5xl md:text-7xl">
-            La <span className="text-gradient-brand">promo</span> del mese.
+            La <span className="text-brand-red font-bold">promo</span> del mese.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Un'offerta nuova ogni mese per iniziare o tornare ad allenarti. Contattaci per
@@ -361,7 +361,7 @@ function Index() {
               <h2 className="mt-6 text-5xl md:text-6xl">
                 Dai un'occhiata
                 <br />
-                <span className="text-gradient-brand">alla palestra.</span>
+                <span className="text-brand-red font-bold">alla palestra.</span>
               </h2>
             </div>
             <p className="max-w-md text-lg text-muted-foreground">
@@ -428,7 +428,7 @@ function Index() {
               </div>
               <h2 className="mt-6 text-5xl md:text-6xl">
                 In pieno centro
-                <br />a <span className="text-gradient-brand">Siracusa</span>.
+                <br />a <span className="text-brand-red font-bold">Siracusa</span>.
               </h2>
             </div>
             <p className="text-lg text-muted-foreground">
@@ -510,7 +510,7 @@ function Index() {
             <h2 className="text-5xl md:text-6xl">
               Le voci dei
               <br />
-              <span className="text-gradient-brand">nostri atleti.</span>
+              <span className="text-brand-red font-bold">nostri atleti.</span>
             </h2>
             <div className="flex items-center gap-4">
               <div className="flex">
