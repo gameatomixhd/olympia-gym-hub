@@ -344,7 +344,7 @@ function Index() {
                   rel="noreferrer"
                   className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-4 text-sm font-bold uppercase tracking-widest text-white transition-transform hover:scale-105"
                 >
-                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </a>
                 <a
                   href={GYM.phoneHref}
@@ -482,7 +482,7 @@ function Index() {
               rel="noreferrer"
               className="group rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-green"
             >
-              <MessageCircle className="h-6 w-6 text-brand-green" />
+              <WhatsAppIcon className="h-6 w-6 text-brand-green" />
               <div className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
                 WhatsApp
               </div>
