@@ -82,7 +82,7 @@ function Index() {
           <a href="#top" className="flex items-center gap-3">
             <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-10 w-10 rounded-full" />
             <span className="font-display hidden text-base tracking-wider whitespace-nowrap md:inline">
-              OLYMPIA
+              centro fitness OLYMPIA
             </span>
           </a>
           <nav className="hidden gap-8 md:flex">
