@@ -129,7 +129,7 @@ function Index() {
                 href={GYM.whatsappHref}
                 className="rounded-full bg-primary px-5 py-2 text-center text-sm font-semibold text-primary-foreground"
               >
-                Prenota una prova
+                Prenota un allenamento
               </a>
             </div>
           </div>
