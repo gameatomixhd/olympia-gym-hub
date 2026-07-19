@@ -102,7 +102,7 @@ function Index() {
             rel="noreferrer"
             className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 md:inline-flex"
           >
-            Prenota una prova
+            Prenota un allenamento
           </a>
           <button
             className="md:hidden"
