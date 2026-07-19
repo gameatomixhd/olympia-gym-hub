@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 
 const GYM = {
   name: "Centro Fitness Olympia",
-  address: "Via Francesco Accolla, 36 — Siracusa",
+  address: "Via Francesco Accolla, 36 Siracusa",
   phone: "0931 703066",
   phoneHref: "tel:+390931703066",
   whatsapp: "348 714 7416",
@@ -82,7 +82,7 @@ function Index() {
           <a href="#top" className="flex items-center gap-3">
             <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-10 w-10 rounded-full" />
             <span className="font-display hidden text-base tracking-wider whitespace-nowrap md:inline">
-              ALZA LA SBARRA <span className="text-brand-red font-bold">DIVENTA OLYMPIA</span>
+              OLYMPIA
             </span>
           </a>
           <nav className="hidden gap-8 md:flex">
@@ -210,7 +210,7 @@ function Index() {
               Il Centro Fitness Olympia è una palestra di circa <strong className="text-foreground">700 mq</strong>{" "}
               interamente dedicata alla sala pesi, con macchinari professionali{" "}
               <strong className="text-foreground">Panatta</strong>. Un ambiente{" "}
-              <strong className="text-foreground">ampio, arieggiato e ad altezza strada</strong> —
+              <strong className="text-foreground">ampio, arieggiato e ad altezza strada</strong>,{" "}
               niente scantinati, solo luce e aria vera.
             </p>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
