@@ -82,7 +82,7 @@ function Index() {
           <a href="#top" className="flex items-center gap-3">
             <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-10 w-10 rounded-full" />
             <span className="font-display hidden text-base tracking-wider whitespace-nowrap md:inline">
-              OLYMPIA
+              centro fitness OLYMPIA
             </span>
           </a>
           <nav className="hidden gap-8 md:flex">
@@ -102,7 +102,7 @@ function Index() {
             rel="noreferrer"
             className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 md:inline-flex"
           >
-            Prenota una prova
+            Prenota un allenamento
           </a>
           <button
             className="md:hidden"
@@ -129,7 +129,7 @@ function Index() {
                 href={GYM.whatsappHref}
                 className="rounded-full bg-primary px-5 py-2 text-center text-sm font-semibold text-primary-foreground"
               >
-                Prenota una prova
+                Prenota un allenamento
               </a>
             </div>
           </div>
