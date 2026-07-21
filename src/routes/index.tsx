@@ -12,6 +12,8 @@ const galCardio = { url: "/cardio.jpg" };
 const galMacchinari = { url: "/macchinari.jpg" };
 import { MapPin, Phone, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera } from "lucide-react";
 import { useState } from "react";
+import { Reveal, useParallax } from "@/components/Reveal";
+
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -40,6 +42,8 @@ const GYM = {
 
 function Index() {
   const [open, setOpen] = useState(false);
+  const scrollY = useParallax();
+
   const nav = [
     { label: "Palestra", href: "#palestra" },
     { label: "Gallery", href: "#gallery" },
@@ -141,28 +145,34 @@ function Index() {
         <img
           src={heroImg}
           alt="Sala pesi Centro Fitness Olympia"
-          className="absolute inset-0 h-full w-full object-cover opacity-55"
+          className="absolute inset-0 h-full w-full object-cover opacity-55 will-change-transform"
+          style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(${1 + Math.min(scrollY, 600) * 0.0004})` }}
           width={1920}
           height={1280}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-background" />
 
+
         
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20 text-brand-white">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
+          <Reveal delay={0} className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
             <span className="h-px w-8 bg-brand-red" /> Siracusa · Sala pesi
-          </div>
-          <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
-            <span className="text-brand-white">Alza la sbarra </span>
-            <span className="text-brand-red font-bold">Diventa Olympia</span>
-          </h1>
-          <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
-            Il Centro Fitness Olympia è la palestra di riferimento a Siracusa per chi cerca
-            un ambiente serio, attrezzature complete e una sala pesi pensata per allenarsi
-            davvero.
-          </p>
-          <div className="flex flex-wrap gap-4">
+          </Reveal>
+          <Reveal delay={120}>
+            <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
+              <span className="text-brand-white">Alza la sbarra </span>
+              <span className="text-brand-red font-bold">Diventa Olympia</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={240}>
+            <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
+              Il Centro Fitness Olympia è la palestra di riferimento a Siracusa per chi cerca
+              un ambiente serio, attrezzature complete e una sala pesi pensata per allenarsi
+              davvero.
+            </p>
+          </Reveal>
+          <Reveal delay={360} className="flex flex-wrap gap-4">
             <a
               href="#promo"
               className="rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
@@ -175,7 +185,8 @@ function Index() {
             >
               Vieni a trovarci
             </a>
-          </div>
+          </Reveal>
+
         </div>
 
       </section>
@@ -183,21 +194,21 @@ function Index() {
       {/* PALESTRA / SALA PESI */}
       <section id="palestra" className="border-t border-border/50 py-24 md:py-32">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2 md:items-center">
-          <div className="relative">
+          <Reveal variant="left" className="relative">
             <img
               src={salaPesiImg}
-              alt="Sala pesi attrezzata"
+              alt="Sala pesi 700mq con macchinari Panatta"
               className="aspect-[5/6] w-full rounded-lg object-cover"
               loading="lazy"
               width={1200}
-              height={1400}
+              height={1440}
             />
-            <div className="absolute -bottom-6 -right-6 hidden rounded-lg bg-brand-red px-6 py-4 md:block">
-              <div className="font-display text-4xl leading-none">100%</div>
-              <div className="text-xs uppercase tracking-widest">Sala Pesi</div>
+            <div className="absolute -bottom-6 -right-6 hidden rounded-lg bg-brand-red px-6 py-4 md:block animate-float-slow">
+              <div className="font-display text-4xl leading-none">700</div>
+              <div className="text-xs uppercase tracking-widest">mq Sala Pesi</div>
             </div>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal variant="right" delay={120}>
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-green">
               <Dumbbell className="h-4 w-4" /> La nostra filosofia
             </div>
@@ -221,14 +232,19 @@ function Index() {
                 { icon: Dumbbell, text: "Bilancieri, rack, panche e cavi" },
                 { icon: Users, text: "Istruttori sempre disponibili" },
                 { icon: Dumbbell, text: "Spogliatoi con docce" },
-              ].map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-start gap-3 text-sm">
-                  <Icon className="mt-0.5 h-4 w-4 flex-none text-brand-red" />
+              ].map(({ icon: Icon, text }, i) => (
+                <li
+                  key={text}
+                  className="group flex items-start gap-3 text-sm transition-transform duration-300 hover:translate-x-1"
+                  style={{ transitionDelay: `${i * 20}ms` }}
+                >
+                  <Icon className="mt-0.5 h-4 w-4 flex-none text-brand-red transition-transform duration-300 group-hover:scale-125" />
                   {text}
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
+
         </div>
 
         {/* SCHEDE GRATUITE */}
@@ -534,10 +550,14 @@ function Index() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {reviews.map((r, idx) => (
-              <article
+              <Reveal
+                as="article"
                 key={r.name}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_oklch(0.62_0.22_25/0.4)]"
+                variant="zoom"
+                delay={(idx % 3) * 90}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_oklch(0.62_0.22_25/0.4)]"
               >
+
                 <div className="absolute inset-x-0 top-0 h-1 bar-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <Quote className="absolute right-6 top-6 h-16 w-16 text-brand-red/10" strokeWidth={1} />
                 <div className="flex gap-1">
@@ -562,7 +582,7 @@ function Index() {
                   </div>
                   <div className="font-display text-lg tracking-wider">{r.name}</div>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
 
