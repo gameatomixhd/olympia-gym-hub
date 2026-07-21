@@ -51,7 +51,7 @@ function Index() {
     { label: "Orari", href: "#orari" },
     { label: "Dove Siamo", href: "#dove" },
     { label: "Recensioni", href: "#recensioni" },
-    { label: "Contatti", href: "#contatti" },
+    
   ];
 
   const gallery = [
@@ -197,14 +197,14 @@ function Index() {
           <Reveal variant="left" className="relative">
             <img
               src={salaPesiImg}
-              alt="Sala pesi 700mq con macchinari Panatta"
+              alt="Sala pesi 750mq con macchinari Panatta"
               className="aspect-[5/6] w-full rounded-lg object-cover"
               loading="lazy"
               width={1200}
               height={1440}
             />
             <div className="absolute -bottom-6 -right-6 hidden rounded-lg bg-brand-red px-6 py-4 md:block animate-float-slow">
-              <div className="font-display text-4xl leading-none">700</div>
+              <div className="font-display text-4xl leading-none">750</div>
               <div className="text-xs uppercase tracking-widest">mq Sala Pesi</div>
             </div>
           </Reveal>
@@ -213,12 +213,12 @@ function Index() {
               <Dumbbell className="h-4 w-4" /> La nostra filosofia
             </div>
             <h2 className="mt-6 text-5xl md:text-6xl">
-              700 mq di
+              750 mq di
               <br />
               <span className="text-brand-red font-bold">pura sala pesi.</span>
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Il Centro Fitness Olympia è una palestra di circa <strong className="text-foreground">700 mq</strong>{" "}
+              Il Centro Fitness Olympia è una palestra di circa <strong className="text-foreground">750 mq</strong>{" "}
               interamente dedicata alla sala pesi, con macchinari professionali{" "}
               <strong className="text-foreground">Panatta</strong>. Un ambiente{" "}
               <strong className="text-foreground">ampio, arieggiato e ad altezza strada</strong>,{" "}
@@ -227,7 +227,7 @@ function Index() {
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
                 { icon: Building2, text: "Macchinari Panatta professionali" },
-                { icon: Ruler, text: "Circa 700 mq di spazio" },
+                { icon: Ruler, text: "Circa 750 mq di spazio" },
                 { icon: Wind, text: "Ambiente arieggiato, ad altezza strada" },
                 { icon: Dumbbell, text: "Bilancieri, rack, panche e cavi" },
                 { icon: Users, text: "Istruttori sempre disponibili" },
@@ -388,7 +388,7 @@ function Index() {
               </h2>
             </div>
             <p className="max-w-md text-lg text-muted-foreground">
-              700mq di sala pesi, macchinari Panatta, area cardio e ambiente ad altezza strada, luminoso e arieggiato.
+              750mq di sala pesi, macchinari Panatta, area cardio e ambiente ad altezza strada, luminoso e arieggiato.
             </p>
           </div>
 
@@ -472,56 +472,6 @@ function Index() {
         </div>
       </section>
 
-      {/* CONTATTI */}
-      <section id="contatti" className="border-t border-border/50 py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-green">
-            <Phone className="h-4 w-4" /> Contatti
-          </div>
-          <h2 className="mt-6 text-5xl md:text-6xl">Scrivici. Passa a trovarci.</h2>
-
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            <a
-              href={GYM.phoneHref}
-              className="group rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-red"
-            >
-              <Phone className="h-6 w-6 text-brand-red" />
-              <div className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
-                Telefono
-              </div>
-              <div className="mt-2 font-display text-3xl tracking-wider">{GYM.phone}</div>
-            </a>
-            <a
-              href={GYM.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-green"
-            >
-              <WhatsAppIcon className="h-6 w-6 text-brand-green" />
-              <div className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
-                WhatsApp
-              </div>
-              <div className="mt-2 font-display text-3xl tracking-wider">{GYM.whatsapp}</div>
-            </a>
-            <a
-              href={`https://www.google.com/maps?q=${GYM.mapsQuery}`}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-red"
-            >
-              <MapPin className="h-6 w-6 text-brand-red" />
-              <div className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
-                Indirizzo
-              </div>
-              <div className="mt-2 font-display text-2xl leading-tight tracking-wider">
-                Via F. Accolla, 36
-                <br />
-                Siracusa
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* RECENSIONI */}
       <section id="recensioni" className="border-t border-border/50 py-24 md:py-32">
