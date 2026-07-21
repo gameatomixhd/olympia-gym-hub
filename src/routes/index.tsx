@@ -472,56 +472,6 @@ function Index() {
         </div>
       </section>
 
-      {/* CONTATTI */}
-      <section id="contatti" className="border-t border-border/50 py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-green">
-            <Phone className="h-4 w-4" /> Contatti
-          </div>
-          <h2 className="mt-6 text-5xl md:text-6xl">Scrivici. Passa a trovarci.</h2>
-
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            <a
-              href={GYM.phoneHref}
-              className="group rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-red"
-            >
-              <Phone className="h-6 w-6 text-brand-red" />
-              <div className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
-                Telefono
-              </div>
-              <div className="mt-2 font-display text-3xl tracking-wider">{GYM.phone}</div>
-            </a>
-            <a
-              href={GYM.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-green"
-            >
-              <WhatsAppIcon className="h-6 w-6 text-brand-green" />
-              <div className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
-                WhatsApp
-              </div>
-              <div className="mt-2 font-display text-3xl tracking-wider">{GYM.whatsapp}</div>
-            </a>
-            <a
-              href={`https://www.google.com/maps?q=${GYM.mapsQuery}`}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-2xl border border-border/60 bg-card p-8 transition-colors hover:border-brand-red"
-            >
-              <MapPin className="h-6 w-6 text-brand-red" />
-              <div className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
-                Indirizzo
-              </div>
-              <div className="mt-2 font-display text-2xl leading-tight tracking-wider">
-                Via F. Accolla, 36
-                <br />
-                Siracusa
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* RECENSIONI */}
       <section id="recensioni" className="border-t border-border/50 py-24 md:py-32">
