@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-gym.jpg";
-import salaPesiImg from "@/assets/salapesi.jpg";
 import schedeImg from "@/assets/schede.jpg";
 const logoAsset = { url: "/olympia-logo.png" };
 const galReception = { url: "/reception.jpg" };
