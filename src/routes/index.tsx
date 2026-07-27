@@ -196,7 +196,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2 md:items-center">
           <Reveal variant="left" className="relative">
             <img
-              src={salaPesiImg}
+              src="/sala1.jpg"
               alt="Sala pesi 750mq con macchinari Panatta"
               className="aspect-[5/6] w-full rounded-lg object-cover"
               loading="lazy"
