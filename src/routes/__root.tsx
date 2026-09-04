@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Centro Fitness Olympia — Palestra Sala Pesi a Siracusa" },
+      { title: "Centro Fitness Olympia, Palestra a Siracusa" },
       { name: "google-site-verification", content: "7jPOGiIuPFSRsIKvZpHhNsGN5XZ2pGSvQ2TylFz4jEc" },
       {
         name: "description",
@@ -91,14 +91,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Centro Fitness Olympia a Siracusa: sala pesi attrezzata, allenamento serio in Via Francesco Accolla 36. Scopri la promo del mese.",
       },
       { name: "author", content: "Centro Fitness Olympia" },
-      { property: "og:title", content: "Centro Fitness Olympia — Palestra Sala Pesi a Siracusa" },
+      { property: "og:title", content: "Centro Fitness Olympia, Palestra a Siracusa" },
       {
         property: "og:description",
         content: "Sala pesi a Siracusa. Aperti tutti i giorni. Scopri la promozione del mese.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Centro Fitness Olympia — Palestra Sala Pesi a Siracusa" },
+      { name: "twitter:title", content: "Centro Fitness Olympia, Palestra a Siracusa" },
       { name: "description", content: "Olympia Fitness Hub is a website for a gym, displaying gym data, location, and current monthly promotions." },
       { property: "og:description", content: "Olympia Fitness Hub is a website for a gym, displaying gym data, location, and current monthly promotions." },
       { name: "twitter:description", content: "Olympia Fitness Hub is a website for a gym, displaying gym data, location, and current monthly promotions." },
