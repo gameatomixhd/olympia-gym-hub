@@ -332,13 +332,13 @@ function Index() {
           <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card">
               <img
-                src="/promo-3-2-1.png"
+                src="/promo-ottobre.jpeg"
                 alt="Promozione del mese Centro Fitness Olympia"
                 className="w-full transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
               <div className="absolute left-4 top-4 rounded-full bg-background/80 px-3 py-1 text-[10px] uppercase tracking-widest backdrop-blur">
-                Promo attiva
+                Promo attiva fino al 31 ottobre 2026
               </div>
             </div>
             <div className="space-y-6">
