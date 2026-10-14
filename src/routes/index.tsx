@@ -168,7 +168,7 @@ function Index() {
 
         
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20 text-brand-white">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-28 text-brand-white">
           <Reveal delay={0} className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
             <MapPin className="h-4 w-4 text-brand-red" /> Siracusa, Via Francesco Accolla 36
           </Reveal>
@@ -617,6 +617,15 @@ function Index() {
         </div>
       </footer>
 
+      <a
+        href={GYM.whatsappInfoHref}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Scrivici su WhatsApp"
+        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-green text-brand-white shadow-[var(--shadow-card)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white"
+      >
+        <WhatsAppIcon className="h-7 w-7" />
+      </a>
     </div>
   );
 }
