@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-gym.jpg";
 import schedeImg from "@/assets/schede.jpg";
 const logoAsset = { url: "/olympia-logo.png" };
 const galReception = { url: "/reception.jpg" };
@@ -23,6 +22,16 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Centro Fitness Olympia | Palestra a Siracusa" },
+      { name: "description", content: "Palestra a Siracusa in Via Francesco Accolla 36: 750 m² di sala pesi con macchinari Panatta, scheda di allenamento gratuita e istruttori sempre in sala." },
+      { property: "og:title", content: "Centro Fitness Olympia | Palestra a Siracusa" },
+      { property: "og:description", content: "750 m² di sala pesi, macchinari Panatta, scheda gratuita e istruttori in sala. Scopri la promozione attiva." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
@@ -33,6 +42,9 @@ const GYM = {
   phoneHref: "tel:+390931703066",
   whatsapp: "348 714 7416",
   whatsappHref: "https://wa.me/393487147416",
+  whatsappInfoHref:
+    "https://wa.me/393487147416?text=" +
+    encodeURIComponent("Ciao, vorrei informazioni sugli abbonamenti del Centro Fitness Olympia."),
   hoursWeek: "Lun – Ven  ·  07:30 – 22:00",
   hoursSat: "Sabato  ·  08:00 – 13:00",
   hoursSun: "Domenica  ·  Chiuso",
@@ -54,10 +66,10 @@ function Index() {
   ];
 
   const gallery = [
-    { src: galReception.url, alt: "Reception Centro Fitness Olympia", span: "md:col-span-2 md:row-span-2" },
+    { src: galSala2.url, alt: "Vista panoramica della sala pesi", span: "md:col-span-2 md:row-span-2" },
     { src: galSala1.url, alt: "Sala pesi con macchinari Panatta", span: "" },
     { src: galManubri.url, alt: "Area manubri e panche", span: "" },
-    { src: galSala2.url, alt: "Vista panoramica della sala pesi", span: "md:col-span-2" },
+    { src: galReception.url, alt: "Reception Centro Fitness Olympia", span: "md:col-span-2" },
     { src: galCardio.url, alt: "Zona cardio con tapis roulant Life Fitness", span: "" },
     { src: galPanche.url, alt: "Panche Panatta e rastrelliera manubri", span: "" },
     { src: galMacchinari.url, alt: "Macchinari isotonici Panatta", span: "md:col-span-2" },
@@ -110,7 +122,8 @@ function Index() {
           <button
             className="md:hidden"
             onClick={() => setOpen(!open)}
-            aria-label="Menu"
+            aria-label="Apri il menu"
+            aria-expanded={open}
           >
             {open ? <X /> : <Menu />}
           </button>
@@ -142,33 +155,33 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative flex min-h-screen items-center overflow-hidden bg-ink">
         <img
-          src={heroImg}
-          alt="Sala pesi Centro Fitness Olympia"
-          className="absolute inset-0 h-full w-full object-cover opacity-55 will-change-transform"
+          src={galSala2.url}
+          alt="Panoramica della sala pesi del Centro Fitness Olympia"
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover opacity-60 will-change-transform"
           style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(${1 + Math.min(scrollY, 600) * 0.0004})` }}
           width={1920}
           height={1280}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/60 to-background" />
 
 
         
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-20 text-brand-white">
           <Reveal delay={0} className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
-            <span className="h-px w-8 bg-brand-red" /> Siracusa · Sala pesi
+            <MapPin className="h-4 w-4 text-brand-red" /> Siracusa, Via Francesco Accolla 36
           </Reveal>
           <Reveal delay={120}>
             <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
-              <span className="text-brand-white">Alza la sbarra </span>
-              <span className="text-brand-red font-bold">Diventa Olympia</span>
+              <span className="text-brand-white">Allenati al tuo </span>
+              <span className="text-brand-red font-bold">potenziale.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
             <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
-              Il Centro Fitness Olympia è la palestra di riferimento a Siracusa per chi cerca
-              un ambiente serio, attrezzature complete e una sala pesi pensata per allenarsi
-              davvero.
+              750 m² dedicati al fitness, macchinari professionali, scheda di allenamento
+              gratuita e istruttori presenti in sala.
             </p>
           </Reveal>
           <Reveal delay={360} className="flex flex-wrap gap-4">
@@ -176,18 +189,40 @@ function Index() {
               href="#promo"
               className="rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
             >
-              Promo del mese
+              Scopri la promozione
             </a>
             <a
               href="#dove"
               className="rounded-full border border-brand-white/40 bg-brand-white/5 px-8 py-4 text-sm font-bold uppercase tracking-widest text-brand-white backdrop-blur-sm transition-colors hover:bg-brand-white/15"
             >
-              Vieni a trovarci
+              Vieni a visitarci
             </a>
           </Reveal>
 
         </div>
 
+      </section>
+
+      {/* VANTAGGI */}
+      <section aria-label="I nostri vantaggi" className="relative z-10 -mt-12 pb-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: Ruler, title: "750 m² di palestra", text: "Spazio ampio, arieggiato e ad altezza strada." },
+            { icon: Building2, title: "Macchinari Panatta", text: "Attrezzatura professionale per ogni distretto." },
+            { icon: FileText, title: "Scheda gratuita", text: "Su misura per te, via app o cartacea." },
+            { icon: Users, title: "Istruttori in sala", text: "Sempre presenti per seguirti e correggerti." },
+          ].map(({ icon: Icon, title, text }, i) => (
+            <Reveal key={title} delay={i * 80}>
+              <div className="h-full rounded-xl border border-border/60 bg-card p-6 shadow-[var(--shadow-card)]">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-red/15 text-brand-red">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <h3 className="mt-4 text-2xl tracking-wider">{title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* PALESTRA / SALA PESI */}
@@ -322,7 +357,7 @@ function Index() {
             <span className="h-px w-8 bg-brand-red" /> Solo per questo mese
           </div>
           <h2 className="mt-6 max-w-3xl text-5xl md:text-7xl">
-            La <span className="text-brand-red font-bold">promo</span> del mese.
+            Inizia ora e <span className="text-brand-red font-bold">risparmia</span>.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Un'offerta nuova ogni mese per iniziare o tornare ad allenarti. Contattaci per
@@ -333,7 +368,7 @@ function Index() {
             <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card">
               <img
                 src="/promo-ottobre.jpeg"
-                alt="Promozione del mese Centro Fitness Olympia"
+                alt="Locandina promozione Shocktober: 5 mesi più 5 in regalo a 79 euro, valida fino al 31 ottobre 2026"
                 className="w-full transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
@@ -342,6 +377,16 @@ function Index() {
               </div>
             </div>
             <div className="space-y-6">
+              <div className="rounded-xl border border-border/60 bg-card p-6">
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                  L'offerta
+                </div>
+                <div className="mt-3 font-display text-5xl leading-none">
+                  5 mesi <span className="text-brand-red">+5 in regalo</span>
+                </div>
+                <div className="mt-2 font-display text-4xl text-brand-red">€79</div>
+                <p className="mt-3 text-sm text-muted-foreground">Valida fino al 31 ottobre 2026.</p>
+              </div>
               <div className="rounded-xl border border-border/60 bg-card p-6">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">
                   Come attivarla
@@ -353,12 +398,12 @@ function Index() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={GYM.whatsappHref}
+                  href={GYM.whatsappInfoHref}
                   target="_blank"
                   rel="noreferrer"
                   className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-4 text-sm font-bold uppercase tracking-widest text-white transition-transform hover:scale-105"
                 >
-                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+                  <WhatsAppIcon className="h-4 w-4" /> Richiedi informazioni
                 </a>
                 <a
                   href={GYM.phoneHref}
@@ -402,7 +447,8 @@ function Index() {
                   src={g.src}
                   alt={g.alt}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  decoding="async"
+                  className="h-full min-h-[240px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 p-4 text-sm text-brand-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
