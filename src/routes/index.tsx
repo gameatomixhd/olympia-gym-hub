@@ -11,6 +11,7 @@ const galMacchinari = { url: "/macchinari.jpg" };
 import { MapPin, Phone, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera } from "lucide-react";
 import { useState } from "react";
 import { Reveal, useParallax } from "@/components/Reveal";
+import { InstagramSection, InstagramIcon, INSTAGRAM_URL } from "@/components/InstagramSection";
 
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -57,8 +58,9 @@ function Index() {
 
   const nav = [
     { label: "Palestra", href: "#palestra" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Promo", href: "#promo" },
+    { label: "Ambienti", href: "#gallery" },
+    { label: "Instagram", href: "#instagram" },
+    { label: "Abbonamenti", href: "#promo" },
     { label: "Orari", href: "#orari" },
     { label: "Dove Siamo", href: "#dove" },
     { label: "Recensioni", href: "#recensioni" },
@@ -174,55 +176,35 @@ function Index() {
           </Reveal>
           <Reveal delay={120}>
             <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
-              <span className="text-brand-white">Allenati al tuo </span>
-              <span className="text-brand-red font-bold">potenziale</span>
+              <span className="block text-brand-white">Allenati.</span>
+              <span className="block text-brand-red font-bold">Supera i tuoi limiti.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
             <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
-              750 m² dedicati al fitness, macchinari professionali, scheda di allenamento
-              gratuita e istruttori sempre presenti in sala.
+              750 m² di energia pura: macchinari Panatta, ambiente arieggiato ad altezza strada,
+              scheda di allenamento gratuita e istruttori sempre presenti in sala.
             </p>
           </Reveal>
           <Reveal delay={360} className="flex flex-wrap gap-4">
             <a
-              href="#promo"
+              href="#palestra"
               className="rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
             >
-              Scopri la promozione
+              Scopri la palestra
             </a>
             <a
-              href="#dove"
-              className="rounded-full border border-brand-white/40 bg-brand-white/5 px-8 py-4 text-sm font-bold uppercase tracking-widest text-brand-white backdrop-blur-sm transition-colors hover:bg-brand-white/15"
+              href={GYM.whatsappInfoHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-white/40 bg-brand-white/5 px-8 py-4 text-sm font-bold uppercase tracking-widest text-brand-white backdrop-blur-sm transition-colors hover:bg-brand-white/15"
             >
-              Vieni a visitarci
+              <WhatsAppIcon className="h-4 w-4" /> Contattaci su WhatsApp
             </a>
           </Reveal>
 
         </div>
 
-      </section>
-
-      {/* VANTAGGI */}
-      <section aria-label="I nostri vantaggi" className="relative z-10 -mt-12 pb-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { icon: Ruler, title: "750 m² di palestra", text: "Spazio ampio, arieggiato e ad altezza strada." },
-            { icon: Building2, title: "Macchinari Panatta", text: "Attrezzatura professionale per ogni distretto." },
-            { icon: FileText, title: "Scheda gratuita", text: "Su misura per te, via app o cartacea." },
-            { icon: Users, title: "Istruttori in sala", text: "Sempre presenti per seguirti e correggerti." },
-          ].map(({ icon: Icon, title, text }, i) => (
-            <Reveal key={title} delay={i * 80}>
-              <div className="h-full rounded-xl border border-border/60 bg-card p-6 shadow-[var(--shadow-card)]">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-red/15 text-brand-red">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <h3 className="mt-4 text-2xl tracking-wider">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
       {/* PALESTRA / SALA PESI */}
@@ -243,7 +225,7 @@ function Index() {
             </div>
           </Reveal>
           <Reveal variant="right" delay={120}>
-            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-green">
+            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
               <Dumbbell className="h-4 w-4" /> La nostra filosofia
             </div>
             <h2 className="mt-6 text-5xl md:text-6xl">
@@ -296,8 +278,8 @@ function Index() {
                   height={1280}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent lg:bg-gradient-to-r" />
-                <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-background/70 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-brand-green backdrop-blur">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+                <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-brand-red/50 bg-background/70 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-brand-red backdrop-blur">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
                   100% Gratuite
                 </div>
               </div>
@@ -315,8 +297,8 @@ function Index() {
                   che preferisci.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <div className="group rounded-xl border border-border/60 bg-background/40 p-5 transition-all hover:-translate-y-1 hover:border-brand-green/50">
-                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-green/10 text-brand-green">
+                  <div className="group rounded-xl border border-border/60 bg-background/40 p-5 transition-all hover:-translate-y-1 hover:border-brand-red/50">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-red/10 text-brand-red">
                       <Smartphone className="h-5 w-5" />
                     </div>
                     <div className="mt-4 font-display text-2xl tracking-wider">Via App</div>
@@ -349,71 +331,29 @@ function Index() {
         </div>
       </section>
 
-      {/* PROMO */}
-      <section id="promo" className="relative overflow-hidden py-24 md:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 via-transparent to-brand-green/10" />
-        <div className="relative mx-auto max-w-7xl px-6">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
-            <span className="h-px w-8 bg-brand-red" /> Solo per questo mese
-          </div>
-          <h2 className="mt-6 max-w-3xl text-5xl md:text-7xl">
-            Inizia ora e <span className="text-brand-red font-bold">risparmia</span>.
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Un'offerta nuova ogni mese per iniziare o tornare ad allenarti. Contattaci per
-            i dettagli e attivare la tua promozione.
-          </p>
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-            <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card">
-              <img
-                src="/promo-ottobre.jpeg"
-                alt="Locandina promozione Shocktober: 5 mesi più 5 in regalo a 79 euro, valida fino al 31 ottobre 2026"
-                className="w-full transition-transform duration-700 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute left-4 top-4 rounded-full bg-background/80 px-3 py-1 text-[10px] uppercase tracking-widest backdrop-blur">
-                Promo attiva fino al 31 ottobre 2026
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="rounded-xl border border-border/60 bg-card p-6">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                  L'offerta
+      {/* VANTAGGI */}
+      <section id="vantaggi" aria-label="I nostri vantaggi" className="relative z-10 bg-ink/40 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6 pb-10">
+          <div className="text-xs uppercase tracking-[0.3em] text-brand-red">Perché Olympia</div>
+          <h2 className="mt-4 text-5xl md:text-6xl">I nostri <span className="text-brand-red font-bold">punti di forza.</span></h2>
+        </div>
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: Ruler, title: "750 m² di palestra", text: "Spazio ampio, arieggiato e ad altezza strada." },
+            { icon: Building2, title: "Macchinari Panatta", text: "Attrezzatura professionale per ogni distretto." },
+            { icon: FileText, title: "Scheda gratuita", text: "Su misura per te, via app o cartacea." },
+            { icon: Users, title: "Istruttori in sala", text: "Sempre presenti per seguirti e correggerti." },
+          ].map(({ icon: Icon, title, text }, i) => (
+            <Reveal key={title} delay={i * 80}>
+              <div className="h-full group rounded-xl border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/60 shadow-[var(--shadow-card)]">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-red/15 text-brand-red">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <div className="mt-3 font-display text-5xl leading-none">
-                  5 mesi <span className="text-brand-red">+5 in regalo</span>
-                </div>
-                <div className="mt-2 font-display text-4xl text-brand-red">€79</div>
-                <p className="mt-3 text-sm text-muted-foreground">Valida fino al 31 ottobre 2026.</p>
+                <h3 className="mt-4 text-2xl tracking-wider">{title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{text}</p>
               </div>
-              <div className="rounded-xl border border-border/60 bg-card p-6">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                  Come attivarla
-                </div>
-                <p className="mt-3 text-base">
-                  Chiamaci o scrivici su WhatsApp: ti spieghiamo tutti i dettagli e
-                  fissiamo la tua prima visita in palestra.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={GYM.whatsappInfoHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-4 text-sm font-bold uppercase tracking-widest text-white transition-transform hover:scale-105"
-                >
-                  <WhatsAppIcon className="h-4 w-4" /> Richiedi informazioni
-                </a>
-                <a
-                  href={GYM.phoneHref}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground transition-transform hover:scale-105"
-                >
-                  <Phone className="h-4 w-4" /> Chiama ora
-                </a>
-              </div>
-            </div>
-          </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -462,10 +402,157 @@ function Index() {
       </section>
 
 
+      <InstagramSection />
+
+      {/* PROMO */}
+      <section id="promo" className="relative overflow-hidden py-24 md:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 via-transparent to-brand-red/10" />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
+            <span className="h-px w-8 bg-brand-red" /> Abbonamenti e offerte
+          </div>
+          <h2 className="mt-6 max-w-3xl text-5xl md:text-7xl">
+            Inizia ora e <span className="text-brand-red font-bold">risparmia</span>.
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+            Un'offerta nuova ogni mese per iniziare o tornare ad allenarti. Contattaci per
+            i dettagli e attivare la tua promozione.
+          </p>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+            <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card">
+              <img
+                src="/promo-ottobre.jpeg"
+                alt="Locandina promozione Shocktober: 5 mesi più 5 in regalo a 79 euro, valida fino al 31 ottobre 2026"
+                className="w-full transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute left-4 top-4 rounded-full bg-background/80 px-3 py-1 text-[10px] uppercase tracking-widest backdrop-blur">
+                Promo attiva fino al 31 ottobre 2026
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div className="rounded-xl border border-border/60 bg-card p-6">
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                  L'offerta
+                </div>
+                <div className="mt-3 font-display text-5xl leading-none">
+                  5 mesi <span className="text-brand-red">+5 in regalo</span>
+                </div>
+                <div className="mt-2 font-display text-4xl text-brand-red">€79</div>
+                <p className="mt-3 text-sm text-muted-foreground">Valida fino al 31 ottobre 2026.</p>
+              </div>
+              <div className="rounded-xl border border-border/60 bg-card p-6">
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                  Come attivarla
+                </div>
+                <p className="mt-3 text-base">
+                  Chiamaci o scrivici su WhatsApp: ti spieghiamo tutti i dettagli e
+                  fissiamo la tua prima visita in palestra.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={GYM.whatsappInfoHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-white px-6 py-4 text-sm font-bold uppercase tracking-widest text-ink transition-transform hover:scale-105"
+                >
+                  <WhatsAppIcon className="h-4 w-4" /> Richiedi informazioni
+                </a>
+                <a
+                  href={GYM.phoneHref}
+                  className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground transition-transform hover:scale-105"
+                >
+                  <Phone className="h-4 w-4" /> Chiama ora
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* RECENSIONI */}
+      <section id="recensioni" className="border-t border-border/50 py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
+            <Star className="h-4 w-4" /> Recensioni Google
+          </div>
+          <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <h2 className="text-5xl md:text-6xl">
+              Le voci dei
+              <br />
+              <span className="text-brand-red font-bold">nostri atleti.</span>
+            </h2>
+            <div className="flex items-center gap-4">
+              <div className="flex">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <Star key={i} className="h-8 w-8 fill-brand-red text-brand-red" />
+                ))}
+              </div>
+              <div>
+                <div className="font-display text-3xl leading-none">5,0</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">su Google</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {reviews.map((r, idx) => (
+              <Reveal
+                as="article"
+                key={r.name}
+                variant="zoom"
+                delay={(idx % 3) * 90}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_oklch(0.62_0.22_25/0.4)]"
+              >
+
+                <div className="absolute inset-x-0 top-0 h-1 bar-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <Quote className="absolute right-6 top-6 h-16 w-16 text-brand-red/10" strokeWidth={1} />
+                <div className="flex gap-1">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="h-5 w-5 fill-brand-red text-brand-red" />
+                  ))}
+                </div>
+                <p className="mt-6 flex-1 text-base leading-relaxed text-foreground/90">
+                  "{r.text}"
+                </p>
+                <div className="mt-8 flex items-center gap-3 border-t border-border/60 pt-5">
+                  <div
+                    className={`flex h-11 w-11 flex-none items-center justify-center rounded-full font-display text-lg ${
+                      idx % 3 === 0
+                        ? "bg-brand-red/15 text-brand-red"
+                        : idx % 3 === 1
+                        ? "bg-brand-red/15 text-brand-red"
+                        : "bg-foreground/10 text-foreground"
+                    }`}
+                  >
+                    {r.name.charAt(0)}
+                  </div>
+                  <div className="font-display text-lg tracking-wider">{r.name}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+
+          <div className="mt-12 flex justify-center">
+            <a
+              href={`https://www.google.com/maps?q=${GYM.mapsQuery}`}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border px-8 py-4 text-sm font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
+            >
+              Leggi tutte le recensioni su Google
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="orari" className="border-t border-border/50 py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-3">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-green">
+            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
               <Clock className="h-4 w-4" /> Orari
             </div>
             <h2 className="mt-6 text-5xl">Quando siamo aperti.</h2>
@@ -518,83 +605,6 @@ function Index() {
       </section>
 
 
-      {/* RECENSIONI */}
-      <section id="recensioni" className="border-t border-border/50 py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-green">
-            <Star className="h-4 w-4" /> Recensioni Google
-          </div>
-          <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <h2 className="text-5xl md:text-6xl">
-              Le voci dei
-              <br />
-              <span className="text-brand-red font-bold">nostri atleti.</span>
-            </h2>
-            <div className="flex items-center gap-4">
-              <div className="flex">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} className="h-8 w-8 fill-brand-red text-brand-red" />
-                ))}
-              </div>
-              <div>
-                <div className="font-display text-3xl leading-none">5,0</div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">su Google</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((r, idx) => (
-              <Reveal
-                as="article"
-                key={r.name}
-                variant="zoom"
-                delay={(idx % 3) * 90}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_oklch(0.62_0.22_25/0.4)]"
-              >
-
-                <div className="absolute inset-x-0 top-0 h-1 bar-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <Quote className="absolute right-6 top-6 h-16 w-16 text-brand-red/10" strokeWidth={1} />
-                <div className="flex gap-1">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-5 w-5 fill-brand-red text-brand-red" />
-                  ))}
-                </div>
-                <p className="mt-6 flex-1 text-base leading-relaxed text-foreground/90">
-                  "{r.text}"
-                </p>
-                <div className="mt-8 flex items-center gap-3 border-t border-border/60 pt-5">
-                  <div
-                    className={`flex h-11 w-11 flex-none items-center justify-center rounded-full font-display text-lg ${
-                      idx % 3 === 0
-                        ? "bg-brand-red/15 text-brand-red"
-                        : idx % 3 === 1
-                        ? "bg-brand-green/15 text-brand-green"
-                        : "bg-foreground/10 text-foreground"
-                    }`}
-                  >
-                    {r.name.charAt(0)}
-                  </div>
-                  <div className="font-display text-lg tracking-wider">{r.name}</div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-
-          <div className="mt-12 flex justify-center">
-            <a
-              href={`https://www.google.com/maps?q=${GYM.mapsQuery}`}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-border px-8 py-4 text-sm font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
-            >
-              Leggi tutte le recensioni su Google
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="border-t border-border/50 py-16">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center">
@@ -611,6 +621,17 @@ function Index() {
             <div className="bar-brand h-3 w-3 rounded-sm" />
           </div>
           <p className="text-sm text-muted-foreground">{GYM.address}</p>
+          <nav aria-label="Link utili" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-widest text-muted-foreground">
+            {nav.map((n) => (
+              <a key={n.href} href={n.href} className="transition-colors hover:text-foreground">{n.label}</a>
+            ))}
+          </nav>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-brand-red hover:text-brand-red"><InstagramIcon className="h-5 w-5" /></a>
+            <a href={GYM.whatsappHref} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-brand-red hover:text-brand-red"><WhatsAppIcon className="h-5 w-5" /></a>
+            <a href={GYM.phoneHref} aria-label={`Chiama ${GYM.phone}`} className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-brand-red hover:text-brand-red"><Phone className="h-5 w-5" /></a>
+          </div>
+          <p className="text-sm text-muted-foreground">Tel. {GYM.phone} · WhatsApp {GYM.whatsapp}</p>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Centro Fitness Olympia · Siracusa
           </p>
@@ -622,7 +643,7 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Scrivici su WhatsApp"
-        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-green text-brand-white shadow-[var(--shadow-card)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white"
+        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-brand-white shadow-[var(--shadow-card)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white"
       >
         <WhatsAppIcon className="h-7 w-7" />
       </a>
