@@ -621,6 +621,17 @@ function Index() {
             <div className="bar-brand h-3 w-3 rounded-sm" />
           </div>
           <p className="text-sm text-muted-foreground">{GYM.address}</p>
+          <nav aria-label="Link utili" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-widest text-muted-foreground">
+            {nav.map((n) => (
+              <a key={n.href} href={n.href} className="transition-colors hover:text-foreground">{n.label}</a>
+            ))}
+          </nav>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-brand-red hover:text-brand-red"><InstagramIcon className="h-5 w-5" /></a>
+            <a href={GYM.whatsappHref} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-brand-red hover:text-brand-red"><WhatsAppIcon className="h-5 w-5" /></a>
+            <a href={GYM.phoneHref} aria-label={`Chiama ${GYM.phone}`} className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-brand-red hover:text-brand-red"><Phone className="h-5 w-5" /></a>
+          </div>
+          <p className="text-sm text-muted-foreground">Tel. {GYM.phone} · WhatsApp {GYM.whatsapp}</p>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Centro Fitness Olympia · Siracusa
           </p>
@@ -632,7 +643,7 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Scrivici su WhatsApp"
-        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[var(--whatsapp)] text-brand-white shadow-[var(--shadow-card)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white"
+        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-brand-white shadow-[var(--shadow-card)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white"
       >
         <WhatsAppIcon className="h-7 w-7" />
       </a>

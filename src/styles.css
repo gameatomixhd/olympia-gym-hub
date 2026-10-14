@@ -34,6 +34,7 @@
   --color-brand-green: var(--brand-green);
   --color-brand-white: var(--brand-white);
   --color-ink: var(--ink);
+  --color-whatsapp: var(--whatsapp);
 
   --font-display: "Bebas Neue", "Impact", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -43,23 +44,24 @@
   --radius: 0.5rem;
 
   --brand-red: oklch(0.62 0.22 25);
-  --brand-green: oklch(0.55 0.18 145);
+  --brand-green: oklch(0.62 0.22 25);
   --brand-white: oklch(0.99 0 0);
-  --ink: oklch(0.12 0.01 240);
+  --ink: oklch(0.12 0.005 240);
+  --whatsapp: oklch(0.72 0.17 150);
 
-  --background: oklch(0.22 0.006 240);
+  --background: oklch(0.17 0.004 240);
   --foreground: oklch(0.97 0.005 240);
-  --card: oklch(0.28 0.006 240);
+  --card: oklch(0.23 0.004 240);
   --card-foreground: oklch(0.97 0.005 240);
   --popover: oklch(0.28 0.006 240);
   --popover-foreground: oklch(0.97 0.005 240);
   --primary: oklch(0.62 0.22 25);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.55 0.18 145);
+  --secondary: oklch(0.3 0.004 240);
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.34 0.006 240);
   --muted-foreground: oklch(0.78 0.008 240);
-  --accent: oklch(0.55 0.18 145);
+  --accent: oklch(0.3 0.004 240);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.6 0.24 25);
   --destructive-foreground: oklch(0.99 0 0);
@@ -67,8 +69,8 @@
   --input: oklch(0.38 0.008 240);
   --ring: oklch(0.62 0.22 25);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.62 0.22 25 / 0.9), oklch(0.55 0.18 145 / 0.75));
-  --gradient-accent: linear-gradient(90deg, var(--brand-red), var(--brand-green));
+  --gradient-hero: linear-gradient(135deg, oklch(0.62 0.22 25 / 0.9), oklch(0.35 0.15 25 / 0.8));
+  --gradient-accent: linear-gradient(90deg, var(--brand-red), oklch(0.45 0.18 25));
   --gradient-soft: linear-gradient(180deg, oklch(0.34 0.008 240), oklch(0.28 0.008 240));
   --shadow-glow: 0 20px 60px -20px oklch(0.62 0.22 25 / 0.4);
   --shadow-card: 0 10px 40px -15px oklch(0 0 0 / 0.3);
