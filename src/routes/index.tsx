@@ -175,13 +175,13 @@ function Index() {
           <Reveal delay={120}>
             <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
               <span className="text-brand-white">Allenati al tuo </span>
-              <span className="text-brand-red font-bold">potenziale.</span>
+              <span className="text-brand-red font-bold">potenziale</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
             <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
               750 m² dedicati al fitness, macchinari professionali, scheda di allenamento
-              gratuita e istruttori presenti in sala.
+              gratuita e istruttori sempre presenti in sala.
             </p>
           </Reveal>
           <Reveal delay={360} className="flex flex-wrap gap-4">
