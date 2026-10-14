@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -40,7 +41,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -99,9 +100,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Centro Fitness Olympia, Palestra a Siracusa" },
-      { name: "description", content: "Olympia Fitness Hub is a website for a gym, displaying gym data, location, and current monthly promotions." },
-      { property: "og:description", content: "Olympia Fitness Hub is a website for a gym, displaying gym data, location, and current monthly promotions." },
-      { name: "twitter:description", content: "Olympia Fitness Hub is a website for a gym, displaying gym data, location, and current monthly promotions." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/de9222e4-27e3-472c-b8d6-26a0fcff116c/id-preview-ce0e3f6a--4850f9f1-590f-44eb-8752-1704f0a3e5ea.lovable.app-1783078227030.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/de9222e4-27e3-472c-b8d6-26a0fcff116c/id-preview-ce0e3f6a--4850f9f1-590f-44eb-8752-1704f0a3e5ea.lovable.app-1783078227030.png" },
     ],
