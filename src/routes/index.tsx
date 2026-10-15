@@ -155,7 +155,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative flex min-h-screen items-center overflow-hidden bg-ink">
+      <section id="top" className="relative flex min-h-[62vh] items-center md:min-h-[72vh] overflow-hidden bg-ink">
         <img
           src={galSala2.url}
           alt="Panoramica della sala pesi del Centro Fitness Olympia"
@@ -170,18 +170,18 @@ function Index() {
 
         
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 pt-32 pb-28 text-brand-white">
+        <div className="relative mx-auto grid max-w-7xl gap-5 px-6 pt-28 pb-12 md:pb-16 text-brand-white">
           <Reveal delay={0} className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
             <MapPin className="h-4 w-4 text-brand-red" /> Siracusa, Via Francesco Accolla 36
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="max-w-5xl text-6xl leading-none md:text-8xl lg:text-9xl">
+            <h1 className="max-w-5xl text-5xl leading-none md:text-7xl lg:text-8xl">
               <span className="block text-brand-white">Allenati.</span>
               <span className="block text-brand-red font-bold">Supera i tuoi limiti.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="max-w-2xl text-lg text-brand-white/80 md:text-xl">
+            <p className="max-w-2xl text-base text-brand-white/80 md:text-lg">
               750 m² di energia pura: macchinari Panatta, ambiente arieggiato ad altezza strada,
               scheda di allenamento gratuita e istruttori sempre presenti in sala.
             </p>
@@ -189,7 +189,7 @@ function Index() {
           <Reveal delay={360} className="flex flex-wrap gap-4">
             <a
               href="#palestra"
-              className="rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
             >
               Scopri la palestra
             </a>
@@ -197,7 +197,7 @@ function Index() {
               href={GYM.whatsappInfoHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-brand-white/40 bg-brand-white/5 px-8 py-4 text-sm font-bold uppercase tracking-widest text-brand-white backdrop-blur-sm transition-colors hover:bg-brand-white/15"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-white/40 bg-brand-white/5 px-6 py-3 text-sm font-bold uppercase tracking-widest text-brand-white backdrop-blur-sm transition-colors hover:bg-brand-white/15"
             >
               <WhatsAppIcon className="h-4 w-4" /> Contattaci su WhatsApp
             </a>
@@ -207,14 +207,58 @@ function Index() {
 
       </section>
 
+      {/* PROMO */}
+      <section id="promo" className="relative scroll-mt-20 py-10 md:py-14">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="relative overflow-hidden rounded-2xl border-2 border-brand-red bg-gradient-to-br from-brand-red/25 via-card to-card shadow-[var(--shadow-glow)]">
+            <div className="grid gap-6 p-5 md:grid-cols-[minmax(0,260px)_1fr] md:items-center md:gap-10 md:p-8">
+              <img
+                src="/promo-ottobre.jpeg"
+                alt="Locandina promozione Shocktober: 5 mesi più 5 in regalo a 79 euro, valida fino al 31 ottobre 2026"
+                className="mx-auto max-h-72 w-auto rounded-xl object-contain md:max-h-80"
+                loading="eager"
+              />
+              <div className="min-w-0">
+                <div className="inline-flex items-center gap-2 rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-white" /> Promo attiva fino al 31 ottobre 2026
+                </div>
+                <h2 className="mt-4 text-4xl md:text-6xl">
+                  5 mesi <span className="text-brand-red font-bold">+5 in regalo</span>
+                </h2>
+                <div className="mt-2 font-display text-5xl text-brand-red md:text-6xl">€79</div>
+                <p className="mt-3 max-w-xl text-sm text-muted-foreground md:text-base">
+                  Chiamaci o scrivici su WhatsApp: ti spieghiamo tutti i dettagli e fissiamo la tua prima visita in palestra.
+                </p>
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href={GYM.whatsappInfoHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-full bg-brand-white px-6 py-3 text-sm font-bold uppercase tracking-widest text-ink transition-transform hover:scale-105"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" /> Richiedi informazioni
+                  </a>
+                  <a
+                    href={GYM.phoneHref}
+                    className="flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-widest text-primary-foreground transition-transform hover:scale-105"
+                  >
+                    <Phone className="h-4 w-4" /> Chiama ora
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PALESTRA / SALA PESI */}
-      <section id="palestra" className="border-t border-border/50 py-24 md:py-32">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2 md:items-center">
+      <section id="palestra" className="border-t border-border/50 py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2 md:items-center">
           <Reveal variant="left" className="relative">
             <img
               src="/sala1.jpg"
               alt="Sala pesi 750mq con macchinari Panatta"
-              className="aspect-[5/6] w-full rounded-lg object-cover"
+              className="aspect-[4/3] max-h-[460px] w-full rounded-lg object-cover"
               loading="lazy"
               width={1200}
               height={1440}
@@ -228,12 +272,12 @@ function Index() {
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
               <Dumbbell className="h-4 w-4" /> La nostra filosofia
             </div>
-            <h2 className="mt-6 text-5xl md:text-6xl">
+            <h2 className="mt-6 text-4xl md:text-5xl">
               750 mq di
               <br />
               <span className="text-brand-red font-bold">pura sala pesi.</span>
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground">
+            <p className="mt-4 text-base text-muted-foreground">
               Il Centro Fitness Olympia è una palestra di circa <strong className="text-foreground">750 mq</strong>{" "}
               interamente dedicata alla sala pesi, con macchinari professionali{" "}
               <strong className="text-foreground">Panatta</strong>. Un ambiente{" "}
@@ -264,11 +308,11 @@ function Index() {
         </div>
 
         {/* SCHEDE GRATUITE */}
-        <div className="mx-auto mt-24 max-w-7xl px-6">
+        <div className="mx-auto mt-8 max-w-7xl px-6">
           <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-card/40 shadow-[var(--shadow-card)]">
             <div className="absolute inset-x-0 top-0 h-1 bar-brand" />
             <div className="grid gap-0 lg:grid-cols-2">
-              <div className="relative min-h-[320px] overflow-hidden lg:min-h-full">
+              <div className="relative min-h-[200px] overflow-hidden lg:min-h-full">
                 <img
                   src={schedeImg}
                   alt="Istruttore che mostra una scheda di allenamento personalizzata al cliente"
@@ -283,11 +327,11 @@ function Index() {
                   100% Gratuite
                 </div>
               </div>
-              <div className="p-8 md:p-12">
+              <div className="p-6 md:p-8">
                 <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
                   <FileText className="h-4 w-4" /> Schede di allenamento
                 </div>
-                <h3 className="mt-5 font-display text-4xl leading-none md:text-5xl">
+                <h3 className="mt-5 font-display text-3xl leading-none md:text-4xl">
                   Sempre <span className="text-brand-red font-bold">gratuite</span>,
                   <br />su misura per te.
                 </h3>
@@ -332,12 +376,12 @@ function Index() {
       </section>
 
       {/* VANTAGGI */}
-      <section id="vantaggi" aria-label="I nostri vantaggi" className="relative z-10 bg-ink/40 py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-6 pb-10">
+      <section id="vantaggi" aria-label="I nostri vantaggi" className="relative z-10 bg-ink/40 py-10 md:py-14">
+        <div className="mx-auto max-w-7xl px-6 pb-6">
           <div className="text-xs uppercase tracking-[0.3em] text-brand-red">Perché Olympia</div>
-          <h2 className="mt-4 text-5xl md:text-6xl">I nostri <span className="text-brand-red font-bold">punti di forza.</span></h2>
+          <h2 className="mt-4 text-4xl md:text-5xl">I nostri <span className="text-brand-red font-bold">punti di forza.</span></h2>
         </div>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-6 lg:grid-cols-4">
           {[
             { icon: Ruler, title: "750 m² di palestra", text: "Spazio ampio, arieggiato e ad altezza strada." },
             { icon: Building2, title: "Macchinari Panatta", text: "Attrezzatura professionale per ogni distretto." },
@@ -345,11 +389,11 @@ function Index() {
             { icon: Users, title: "Istruttori in sala", text: "Sempre presenti per seguirti e correggerti." },
           ].map(({ icon: Icon, title, text }, i) => (
             <Reveal key={title} delay={i * 80}>
-              <div className="h-full group rounded-xl border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/60 shadow-[var(--shadow-card)]">
+              <div className="h-full group rounded-xl border border-border/60 bg-card p-4 md:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/60 shadow-[var(--shadow-card)]">
                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-red/15 text-brand-red">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <h3 className="mt-4 text-2xl tracking-wider">{title}</h3>
+                <h3 className="mt-3 text-xl md:text-2xl tracking-wider">{title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{text}</p>
               </div>
             </Reveal>
@@ -358,14 +402,14 @@ function Index() {
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="border-t border-border/50 py-24 md:py-32">
+      <section id="gallery" className="border-t border-border/50 py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
                 <Camera className="h-4 w-4" /> Gallery
               </div>
-              <h2 className="mt-6 text-5xl md:text-6xl">
+              <h2 className="mt-6 text-4xl md:text-5xl">
                 Dai un'occhiata
                 <br />
                 <span className="text-brand-red font-bold">alla palestra.</span>
@@ -376,7 +420,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-[220px]">
+          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:auto-rows-[170px]">
             {gallery.map((g, i) => (
               <div
                 key={g.src}
@@ -388,7 +432,7 @@ function Index() {
                   alt={g.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-full min-h-[240px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  className="h-full min-h-[130px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 p-4 text-sm text-brand-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
@@ -404,82 +448,14 @@ function Index() {
 
       <InstagramSection />
 
-      {/* PROMO */}
-      <section id="promo" className="relative overflow-hidden py-24 md:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 via-transparent to-brand-red/10" />
-        <div className="relative mx-auto max-w-7xl px-6">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
-            <span className="h-px w-8 bg-brand-red" /> Abbonamenti e offerte
-          </div>
-          <h2 className="mt-6 max-w-3xl text-5xl md:text-7xl">
-            Inizia ora e <span className="text-brand-red font-bold">risparmia</span>.
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Un'offerta nuova ogni mese per iniziare o tornare ad allenarti. Contattaci per
-            i dettagli e attivare la tua promozione.
-          </p>
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-            <div className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card">
-              <img
-                src="/promo-ottobre.jpeg"
-                alt="Locandina promozione Shocktober: 5 mesi più 5 in regalo a 79 euro, valida fino al 31 ottobre 2026"
-                className="w-full transition-transform duration-700 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute left-4 top-4 rounded-full bg-background/80 px-3 py-1 text-[10px] uppercase tracking-widest backdrop-blur">
-                Promo attiva fino al 31 ottobre 2026
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="rounded-xl border border-border/60 bg-card p-6">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                  L'offerta
-                </div>
-                <div className="mt-3 font-display text-5xl leading-none">
-                  5 mesi <span className="text-brand-red">+5 in regalo</span>
-                </div>
-                <div className="mt-2 font-display text-4xl text-brand-red">€79</div>
-                <p className="mt-3 text-sm text-muted-foreground">Valida fino al 31 ottobre 2026.</p>
-              </div>
-              <div className="rounded-xl border border-border/60 bg-card p-6">
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                  Come attivarla
-                </div>
-                <p className="mt-3 text-base">
-                  Chiamaci o scrivici su WhatsApp: ti spieghiamo tutti i dettagli e
-                  fissiamo la tua prima visita in palestra.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={GYM.whatsappInfoHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-white px-6 py-4 text-sm font-bold uppercase tracking-widest text-ink transition-transform hover:scale-105"
-                >
-                  <WhatsAppIcon className="h-4 w-4" /> Richiedi informazioni
-                </a>
-                <a
-                  href={GYM.phoneHref}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground transition-transform hover:scale-105"
-                >
-                  <Phone className="h-4 w-4" /> Chiama ora
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* RECENSIONI */}
-      <section id="recensioni" className="border-t border-border/50 py-24 md:py-32">
+      <section id="recensioni" className="border-t border-border/50 py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
             <Star className="h-4 w-4" /> Recensioni Google
           </div>
           <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <h2 className="text-5xl md:text-6xl">
+            <h2 className="text-4xl md:text-5xl">
               Le voci dei
               <br />
               <span className="text-brand-red font-bold">nostri atleti.</span>
@@ -487,7 +463,7 @@ function Index() {
             <div className="flex items-center gap-4">
               <div className="flex">
                 {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} className="h-8 w-8 fill-brand-red text-brand-red" />
+                  <Star key={i} className="h-6 w-6 fill-brand-red text-brand-red" />
                 ))}
               </div>
               <div>
@@ -497,29 +473,29 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((r, idx) => (
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {reviews.slice(0, 8).map((r, idx) => (
               <Reveal
                 as="article"
                 key={r.name}
                 variant="zoom"
-                delay={(idx % 3) * 90}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-8 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_oklch(0.62_0.22_25/0.4)]"
+                delay={(idx % 4) * 70}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card to-card/40 p-5 hover:-translate-y-1 hover:border-brand-red hover:shadow-[0_20px_50px_-20px_oklch(0.62_0.22_25/0.4)]"
               >
 
                 <div className="absolute inset-x-0 top-0 h-1 bar-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <Quote className="absolute right-6 top-6 h-16 w-16 text-brand-red/10" strokeWidth={1} />
+                <Quote className="absolute right-6 top-6 h-10 w-10 text-brand-red/10" strokeWidth={1} />
                 <div className="flex gap-1">
                   {[0, 1, 2, 3, 4].map((i) => (
                     <Star key={i} className="h-5 w-5 fill-brand-red text-brand-red" />
                   ))}
                 </div>
-                <p className="mt-6 flex-1 text-base leading-relaxed text-foreground/90">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-foreground/90">
                   "{r.text}"
                 </p>
-                <div className="mt-8 flex items-center gap-3 border-t border-border/60 pt-5">
+                <div className="mt-4 flex items-center gap-3 border-t border-border/60 pt-3">
                   <div
-                    className={`flex h-11 w-11 flex-none items-center justify-center rounded-full font-display text-lg ${
+                    className={`flex h-9 w-9 flex-none items-center justify-center rounded-full font-display text-lg ${
                       idx % 3 === 0
                         ? "bg-brand-red/15 text-brand-red"
                         : idx % 3 === 1
@@ -536,12 +512,12 @@ function Index() {
           </div>
 
 
-          <div className="mt-12 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <a
               href={`https://www.google.com/maps?q=${GYM.mapsQuery}`}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-border px-8 py-4 text-sm font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
+              className="rounded-full border border-border px-6 py-3 text-sm font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
             >
               Leggi tutte le recensioni su Google
             </a>
@@ -549,20 +525,20 @@ function Index() {
         </div>
       </section>
 
-      <section id="orari" className="border-t border-border/50 py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-3">
+      <section id="orari" className="border-t border-border/50 py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-3">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
               <Clock className="h-4 w-4" /> Orari
             </div>
-            <h2 className="mt-6 text-5xl">Quando siamo aperti.</h2>
+            <h2 className="mt-4 text-4xl">Quando siamo aperti.</h2>
           </div>
           <div className="md:col-span-2">
             <div className="divide-y divide-border/60 border-y border-border/60">
               {[GYM.hoursWeek, GYM.hoursSat, GYM.hoursSun].map((h) => {
                 const [day, time] = h.split("·").map((s) => s.trim());
                 return (
-                  <div key={h} className="flex items-center justify-between py-6">
+                  <div key={h} className="flex items-center justify-between py-3">
                     <span className="font-display text-2xl tracking-wider">{day}</span>
                     <span className="text-muted-foreground">{time}</span>
                   </div>
@@ -574,14 +550,14 @@ function Index() {
       </section>
 
       {/* DOVE SIAMO */}
-      <section id="dove" className="border-t border-border/50 py-24 md:py-32">
+      <section id="dove" className="border-t border-border/50 py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 md:items-end">
+          <div className="grid gap-4 md:grid-cols-2 md:items-end">
             <div>
               <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
                 <MapPin className="h-4 w-4" /> Dove Siamo
               </div>
-              <h2 className="mt-6 text-5xl md:text-6xl">
+              <h2 className="mt-6 text-4xl md:text-5xl">
                 In pieno centro
                 <br />a <span className="text-brand-red font-bold">Siracusa</span>.
               </h2>
@@ -592,11 +568,11 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-2xl border border-border/60">
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border/60">
             <iframe
               title="Mappa Centro Fitness Olympia"
               src={`https://www.google.com/maps?q=${GYM.mapsQuery}&output=embed`}
-              className="h-[420px] w-full"
+              className="h-[260px] w-full md:h-[320px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
@@ -606,12 +582,12 @@ function Index() {
 
 
       {/* FOOTER */}
-      <footer className="border-t border-border/50 py-16">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center">
+      <footer className="border-t border-border/50 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 text-center">
           <img
             src={logoAsset.url}
             alt="Logo Centro Fitness Olympia"
-            className="h-32 w-32 rounded-full shadow-[0_10px_40px_-10px_oklch(0.62_0.22_25/0.5)]"
+            className="h-20 w-20 rounded-full shadow-[0_10px_40px_-10px_oklch(0.62_0.22_25/0.5)]"
           />
           <div className="flex items-center gap-2">
             <div className="bar-brand h-3 w-3 rounded-sm" />

@@ -31,7 +31,7 @@ function ReelCard({ url, index }: { url: string; index: number }) {
   const src = embedUrl(url);
   if (!src) return null;
   return (
-    <div className="relative aspect-[9/16] w-[260px] flex-none snap-start overflow-hidden rounded-2xl border border-border/60 bg-card sm:w-auto">
+    <div className="relative aspect-[9/16] w-[160px] flex-none snap-start overflow-hidden rounded-2xl border border-border/60 bg-card sm:w-auto">
       {active ? (
         <iframe src={src} title={`Reel Instagram ${index + 1}`} className="h-full w-full" loading="lazy" allowFullScreen />
       ) : (
@@ -41,11 +41,11 @@ function ReelCard({ url, index }: { url: string; index: number }) {
           className="group flex h-full w-full flex-col items-center justify-center gap-4 bg-gradient-to-b from-card to-ink p-6 text-center"
           aria-label={`Guarda il Reel ${index + 1}`}
         >
-          <img src="/olympia-logo.png" alt="" className="h-16 w-16 rounded-full opacity-80" loading="lazy" />
-          <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
+          <img src="/olympia-logo.png" alt="" className="h-10 w-10 rounded-full opacity-80" loading="lazy" />
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
             <Play className="h-7 w-7 fill-current" />
           </span>
-          <span className="font-display text-xl tracking-wider">Guarda il Reel</span>
+          <span className="font-display text-base tracking-wider">Guarda il Reel</span>
           <span className="absolute right-4 top-4 text-foreground/80"><InstagramIcon className="h-5 w-5" /></span>
         </button>
       )}
@@ -55,17 +55,17 @@ function ReelCard({ url, index }: { url: string; index: number }) {
 
 export function InstagramSection() {
   return (
-    <section id="instagram" className="border-t border-border/50 bg-ink/40 py-24 md:py-32">
+    <section id="instagram" className="border-t border-border/50 bg-ink/40 py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-red">
               <InstagramIcon className="h-4 w-4" /> @centro.fitness.olympia
             </div>
-            <h2 className="mt-6 text-5xl md:text-7xl">
+            <h2 className="mt-6 text-4xl md:text-5xl">
               Vivi l'energia <span className="text-brand-red font-bold">Olympia</span>
             </h2>
-            <p className="mt-4 max-w-xl text-lg text-muted-foreground">
+            <p className="mt-3 max-w-xl text-base text-muted-foreground">
               Allenamenti, novità, vita in palestra e tutta l'energia della nostra community.
             </p>
           </div>
@@ -73,14 +73,14 @@ export function InstagramSection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105 md:self-auto"
+            className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105 md:self-auto"
           >
             <InstagramIcon className="h-4 w-4" /> Seguici su Instagram
           </a>
         </div>
 
         {INSTAGRAM_REELS.length > 0 ? (
-          <div className="-mx-6 mt-12 flex snap-x gap-4 overflow-x-auto px-6 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4">
+          <div className="-mx-6 mt-8 flex snap-x gap-3 overflow-x-auto px-6 pb-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-5">
             {INSTAGRAM_REELS.map((u, i) => (
               <ReelCard key={u} url={u} index={i} />
             ))}
@@ -90,7 +90,7 @@ export function InstagramSection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
-            className="group mt-12 flex flex-col items-center gap-5 rounded-2xl border border-dashed border-border p-12 text-center transition-colors hover:border-brand-red"
+            className="group mt-8 flex flex-col items-center gap-5 rounded-2xl border border-dashed border-border p-8 text-center transition-colors hover:border-brand-red"
           >
             <img src="/olympia-logo.png" alt="Logo Centro Fitness Olympia" className="h-20 w-20 rounded-full" loading="lazy" />
             <span className="font-display text-3xl tracking-wider">Guarda i nostri Reel su Instagram</span>
