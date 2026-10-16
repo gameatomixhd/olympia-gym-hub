@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://olympia-gym-hub.lovable.app/sitemap.xml
