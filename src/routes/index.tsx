@@ -176,8 +176,8 @@ function Index() {
           </Reveal>
           <Reveal delay={120}>
             <h1 className="max-w-5xl text-5xl leading-none md:text-7xl lg:text-8xl">
-              <span className="block text-brand-white">Allenati.</span>
-              <span className="block text-brand-red font-bold">Supera i tuoi limiti.</span>
+              <span className="block text-brand-white">Allenati</span>
+              <span className="block text-brand-red font-bold">Supera i tuoi limiti</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
