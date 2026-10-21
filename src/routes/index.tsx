@@ -447,7 +447,31 @@ function Index() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mx-auto mt-4 max-w-7xl px-6">
+          <div className="flex flex-col items-start gap-4 rounded-xl border border-satispay/45 bg-satispay/10 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-3">
+              <CreditCard className="mt-1 h-6 w-6 shrink-0 text-satispay" aria-hidden="true" />
+              <div>
+                <h3 className="text-xl tracking-wider md:text-2xl">
+                  Paghi in <span className="text-satispay font-bold">3 rate senza interessi</span>
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Con Satispay dividi l'abbonamento in 3 rate, senza interessi. Inizi oggi e paghi con calma.
+                </p>
+              </div>
+            </div>
+            <a
+              href={GYM.whatsappInfoHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-satispay/60 px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-satispay transition-colors hover:bg-satispay hover:text-primary-foreground"
+            >
+              <WhatsAppIcon className="h-4 w-4" /> Chiedi come fare
+            </a>
+          </div>
+        </Reveal>
       </section>
+
 
       {/* GALLERY */}
       <section id="gallery" className="border-t border-border/50 py-12 md:py-16">
