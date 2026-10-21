@@ -36,6 +36,7 @@
   --color-ink: var(--ink);
   --color-whatsapp: var(--whatsapp);
   --color-satispay: var(--satispay);
+  --color-satispay-logo: var(--satispay-logo);
 
 
   --font-display: "Bebas Neue", "Impact", sans-serif;
@@ -51,6 +52,7 @@
   --ink: oklch(0.12 0.005 240);
   --whatsapp: oklch(0.72 0.17 150);
   --satispay: oklch(0.66 0.15 250);
+  --satispay-logo: oklch(0.637 0.101 84);
 
 
   --background: oklch(0.17 0.004 240);
