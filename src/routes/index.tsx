@@ -288,7 +288,7 @@ function Index() {
                     <span className="font-bold uppercase tracking-wider text-satispay">3 rate senza interessi con Satispay</span>
                     <span className="text-muted-foreground">
                       {" "}
-                      Puoi pagare l'abbonamento diviso in 3 comode rate, senza interessi: così iniziare ti costa meno e da subito.
+                      Puoi pagare l'abbonamento diviso in 3 comode rate, senza interessi: così iniziare ti costa meno da subito.
                     </span>
                   </p>
                 </div>
