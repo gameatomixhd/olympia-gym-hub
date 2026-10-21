@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Payment/brand accent colors live as semantic tokens in `src/styles.css` (e.g. `--whatsapp`, `--satispay`); use the token utilities in components instead of hardcoding hex values, so the palette stays themed.
+
