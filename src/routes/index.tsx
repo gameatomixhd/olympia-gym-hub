@@ -284,7 +284,7 @@ function Index() {
                   </a>
                 </div>
                 <div className="mt-5 flex items-start gap-3 rounded-xl border border-satispay/45 bg-satispay/10 px-4 py-3">
-                  <CreditCard className="mt-0.5 h-5 w-5 shrink-0 text-satispay" aria-hidden="true" />
+                  <SatispayIcon className="mt-0.5 h-5 w-5 shrink-0 text-satispay-logo" />
                   <p className="text-sm leading-relaxed">
                     <span className="font-bold uppercase tracking-wider text-satispay">3 rate senza interessi con Satispay</span>
                     <span className="text-muted-foreground">
@@ -451,7 +451,7 @@ function Index() {
         <Reveal className="mx-auto mt-4 max-w-7xl px-6">
           <div className="flex flex-col items-start gap-4 rounded-xl border border-satispay/45 bg-satispay/10 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
-              <CreditCard className="mt-1 h-6 w-6 shrink-0 text-satispay" aria-hidden="true" />
+              <SatispayIcon className="mt-1 h-6 w-6 shrink-0 text-satispay-logo" />
               <div>
                 <h3 className="text-xl tracking-wider md:text-2xl">
                   Paghi in <span className="text-satispay font-bold">3 rate senza interessi</span>

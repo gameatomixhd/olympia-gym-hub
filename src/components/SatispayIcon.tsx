@@ -2,7 +2,7 @@ type SatispayIconProps = {
   className?: string;
 };
 
-// Marchio ufficiale Satispay (simbolo "S"), sagoma取自 file vettoriale pubblico.
+// Marchio ufficiale Satispay (simbolo "S"), sagoma presa dal file vettoriale pubblico.
 export function SatispayIcon({ className }: SatispayIconProps) {
   return (
     <svg
