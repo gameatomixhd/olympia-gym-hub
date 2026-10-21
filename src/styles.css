@@ -35,6 +35,8 @@
   --color-brand-white: var(--brand-white);
   --color-ink: var(--ink);
   --color-whatsapp: var(--whatsapp);
+  --color-satispay: var(--satispay);
+
 
   --font-display: "Bebas Neue", "Impact", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -48,6 +50,8 @@
   --brand-white: oklch(0.99 0 0);
   --ink: oklch(0.12 0.005 240);
   --whatsapp: oklch(0.72 0.17 150);
+  --satispay: oklch(0.66 0.15 250);
+
 
   --background: oklch(0.17 0.004 240);
   --foreground: oklch(0.97 0.005 240);
