@@ -8,7 +8,7 @@ const galManubri = { url: "/manubri.jpg" };
 const galPanche = { url: "/panche.jpg" };
 const galCardio = { url: "/cardio.jpg" };
 const galMacchinari = { url: "/macchinari.jpg" };
-import { MapPin, Phone, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera } from "lucide-react";
+import { MapPin, Phone, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera, CreditCard } from "lucide-react";
 import { useState } from "react";
 import { Reveal, useParallax } from "@/components/Reveal";
 import { InstagramSection, InstagramIcon, INSTAGRAM_URL } from "@/components/InstagramSection";
@@ -26,8 +26,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Centro Fitness Olympia | Palestra a Siracusa" },
-      { name: "description", content: "Palestra a Siracusa in Via Francesco Accolla 36: 750 m² di sala pesi con macchinari Panatta, scheda di allenamento gratuita e istruttori sempre in sala." },
-      { name: "keywords", content: "palestra Siracusa, sala pesi Siracusa, palestra Panatta Siracusa, centro fitness Siracusa, bodybuilding Siracusa, scheda allenamento gratuita, Centro Fitness Olympia" },
+      { name: "description", content: "Palestra a Siracusa in Via Francesco Accolla 36: 750 m² di sala pesi con macchinari Panatta, scheda di allenamento gratuita e istruttori sempre in sala. Abbonamento anche in 3 rate senza interessi con Satispay." },
+      { name: "keywords", content: "palestra Siracusa, sala pesi Siracusa, palestra Panatta Siracusa, centro fitness Siracusa, bodybuilding Siracusa, scheda allenamento gratuita, abbonamento palestra in 3 rate Satispay, Centro Fitness Olympia" },
+
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "geo.region", content: "IT-SR" },
       { name: "geo.placename", content: "Siracusa" },
@@ -281,7 +282,18 @@ function Index() {
                     <Phone className="h-4 w-4" /> Chiama ora
                   </a>
                 </div>
+                <div className="mt-5 flex items-start gap-3 rounded-xl border border-satispay/45 bg-satispay/10 px-4 py-3">
+                  <CreditCard className="mt-0.5 h-5 w-5 shrink-0 text-satispay" aria-hidden="true" />
+                  <p className="text-sm leading-relaxed">
+                    <span className="font-bold uppercase tracking-wider text-satispay">3 rate senza interessi con Satispay</span>
+                    <span className="text-muted-foreground">
+                      {" "}
+                      Puoi pagare l'abbonamento diviso in 3 comode rate, senza interessi: così iniziare ti costa meno e da subito.
+                    </span>
+                  </p>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
