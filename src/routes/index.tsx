@@ -11,11 +11,14 @@ const galSala2 = { url: panoramaImg };
 const galManubri = { url: manubriImg };
 const galCardio = { url: cardioImg };
 const galMacchinari = { url: macchinariImg };
-import { MapPin, Phone, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera } from "lucide-react";
+import { MapPin, Phone, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera, ArrowRightLeft } from "lucide-react";
 import { SatispayIcon } from "@/components/SatispayIcon";
 import { useState } from "react";
 import { Reveal, useParallax } from "@/components/Reveal";
 import { InstagramSection, InstagramIcon, INSTAGRAM_URL } from "@/components/InstagramSection";
+import { PromoBenefits } from "@/components/PromoBenefits";
+import { Button } from "@/components/ui/button";
+import { membershipTransferPolicy } from "@/lib/membership-benefits";
 
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -296,6 +299,7 @@ function Index() {
                     </span>
                   </p>
                 </div>
+                <PromoBenefits />
               </div>
 
             </div>
@@ -304,6 +308,23 @@ function Index() {
       </section>
 
       {/* PALESTRA / SALA PESI */}
+      {membershipTransferPolicy.transferable && membershipTransferPolicy.recipient === "anyone" && (
+        <section id="cessione-abbonamento" aria-labelledby="cessione-title" className="border-t border-border/50 bg-ink/40 py-10 md:py-14">
+          <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-center md:gap-8">
+            <ArrowRightLeft aria-hidden="true" className="h-10 w-10 shrink-0 text-brand-red" />
+            <div className="min-w-0 flex-1">
+              <h2 id="cessione-title" className="text-3xl md:text-4xl">Il tuo abbonamento <span className="font-bold text-brand-red">puoi cederlo a chi vuoi</span></h2>
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                Se non vuoi o non puoi più venire in palestra, puoi cedere tranquillamente il tuo abbonamento a chi vuoi.
+              </p>
+            </div>
+            <Button asChild variant="outline" className="h-auto self-start whitespace-normal rounded-full border-brand-red/50 px-5 py-3 text-sm font-bold uppercase md:shrink-0 md:self-auto">
+              <a href={GYM.whatsappInfoHref} target="_blank" rel="noreferrer"><WhatsAppIcon className="h-4 w-4" /> Chiedi informazioni</a>
+            </Button>
+          </div>
+        </section>
+      )}
+
       <section id="palestra" className="border-t border-border/50 py-12 md:py-16">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2 md:items-center">
           <Reveal variant="left" className="relative">
