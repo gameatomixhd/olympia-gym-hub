@@ -1,13 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import schedeImg from "@/assets/schede.jpg";
+import panoramaImg from "@/assets/olympia-panorama.jpg";
+import salaPesiImg from "@/assets/olympia-sala-pesi.jpg";
+import manubriImg from "@/assets/olympia-manubri.jpg";
+import cardioImg from "@/assets/olympia-cardio.jpg";
+import macchinariImg from "@/assets/olympia-macchinari.jpg";
 const logoAsset = { url: "/olympia-logo.png" };
-const galReception = { url: "/reception.jpg" };
-const galSala1 = { url: "/sala1.jpg" };
-const galSala2 = { url: "/sala2.jpg" };
-const galManubri = { url: "/manubri.jpg" };
-const galPanche = { url: "/panche.jpg" };
-const galCardio = { url: "/cardio.jpg" };
-const galMacchinari = { url: "/macchinari.jpg" };
+const galSala1 = { url: salaPesiImg };
+const galSala2 = { url: panoramaImg };
+const galManubri = { url: manubriImg };
+const galCardio = { url: cardioImg };
+const galMacchinari = { url: macchinariImg };
 import { MapPin, Phone, Clock, Dumbbell, Menu, X, Smartphone, FileText, Users, Wind, Building2, Ruler, Star, Quote, Camera } from "lucide-react";
 import { SatispayIcon } from "@/components/SatispayIcon";
 import { useState } from "react";
@@ -51,7 +54,6 @@ export const Route = createFileRoute("/")({
           description: "Palestra a Siracusa di 750 m² dedicata alla sala pesi, con macchinari Panatta, scheda di allenamento gratuita e istruttori sempre presenti.",
           url: "https://olympia-gym-hub.lovable.app/",
           logo: "https://olympia-gym-hub.lovable.app/olympia-logo.png",
-          image: "https://olympia-gym-hub.lovable.app/sala2.jpg",
           telephone: "+390931703066",
           priceRange: "€",
           address: {
@@ -109,10 +111,8 @@ function Index() {
     { src: galSala2.url, alt: "Vista panoramica della sala pesi", span: "md:col-span-2 md:row-span-2" },
     { src: galSala1.url, alt: "Sala pesi con macchinari Panatta", span: "" },
     { src: galManubri.url, alt: "Area manubri e panche", span: "" },
-    { src: galReception.url, alt: "Reception Centro Fitness Olympia", span: "md:col-span-2" },
     { src: galCardio.url, alt: "Zona cardio con tapis roulant Life Fitness", span: "" },
-    { src: galPanche.url, alt: "Panche Panatta e rastrelliera manubri", span: "" },
-    { src: galMacchinari.url, alt: "Macchinari isotonici Panatta", span: "md:col-span-2" },
+    { src: galMacchinari.url, alt: "Macchinari isotonici Panatta", span: "" },
   ];
 
 
@@ -308,7 +308,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2 md:items-center">
           <Reveal variant="left" className="relative">
             <img
-              src="/sala1.jpg"
+              src={galSala1.url}
               alt="Sala pesi 750mq con macchinari Panatta"
               className="aspect-[4/3] max-h-[460px] w-full rounded-lg object-cover"
               loading="lazy"
@@ -496,11 +496,11 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:auto-rows-[170px]">
+          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4 md:auto-rows-[190px]">
             {gallery.map((g, i) => (
               <div
                 key={g.src}
-                className={`group relative overflow-hidden rounded-2xl border border-border/60 opacity-0 animate-fade-in ${g.span}`}
+                className={`group relative aspect-[4/3] overflow-hidden rounded-lg border border-border/60 opacity-0 animate-fade-in md:aspect-auto ${g.span}`}
                 style={{ animationDelay: `${i * 90}ms`, animationFillMode: "forwards" }}
               >
                 <img
