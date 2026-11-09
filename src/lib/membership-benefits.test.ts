@@ -1,11 +1,12 @@
-import { describe, expect, test } from "bun:test";
+import { describe, test } from "node:test";
+import { strict as assert } from "node:assert";
 import { membershipTransferPolicy } from "./membership-benefits";
 
 describe("Cessione dell'abbonamento", () => {
   test("l'abbonamento può essere ceduto", () => {
-    expect(membershipTransferPolicy.transferable).toBe(true);
+    assert.equal(membershipTransferPolicy.transferable, true);
   });
   test("il destinatario può essere chiunque", () => {
-    expect(membershipTransferPolicy.recipient).toBe("anyone");
+    assert.equal(membershipTransferPolicy.recipient, "anyone");
   });
 });
