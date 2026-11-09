@@ -135,63 +135,72 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#top" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-10 w-10 rounded-full" />
-            <span className="font-display hidden text-base tracking-wider whitespace-nowrap md:inline">
-              centro fitness OLYMPIA
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-xl" onKeyDown={(event) => { if (event.key === "Escape") setOpen(false); }}>
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+          <a href="#top" onClick={() => setOpen(false)} className="flex shrink-0 items-center gap-3" aria-label="Centro Fitness Olympia, inizio pagina">
+            <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-12 w-12 shrink-0 rounded-full" />
+            <span className="font-display flex flex-col leading-none">
+              <span className="font-body text-[10px] font-semibold uppercase leading-4 text-muted-foreground">Centro Fitness</span>
+              <span className="text-2xl leading-none text-foreground">OLYMPIA</span>
             </span>
           </a>
-          <nav className="hidden gap-8 md:flex">
+          <nav aria-label="Menu principale" className="hidden items-center gap-1 xl:flex">
             {nav.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {n.label}
-              </a>
+              <Button key={n.href} asChild variant="ghost" size="sm" className="px-2 text-xs font-semibold uppercase text-muted-foreground hover:text-foreground">
+                <a href={n.href}>{n.label}</a>
+              </Button>
             ))}
           </nav>
+          <div className="flex shrink-0 items-center gap-2">
+          <Button asChild className="hidden h-10 px-4 text-xs font-semibold sm:inline-flex">
           <a
             href={GYM.whatsappHref}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 md:inline-flex"
           >
+            <WhatsAppIcon className="h-4 w-4" />
             Prenota un allenamento
           </a>
-          <button
-            className="md:hidden"
-            onClick={() => setOpen(!open)}
-            aria-label="Apri il menu"
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="h-10 w-10 xl:hidden"
+            onClick={() => setOpen((previous) => !previous)}
+            aria-label={open ? "Chiudi il menu" : "Apri il menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
-            {open ? <X /> : <Menu />}
-          </button>
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </Button>
+          </div>
         </div>
         {open && (
-          <div className="border-t border-border/50 bg-background md:hidden">
-            <div className="flex flex-col gap-4 px-6 py-4">
+          <nav id="mobile-navigation" aria-label="Menu principale" className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-border/50 bg-background xl:hidden">
+            <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2 px-4 py-4 sm:px-6">
               {nav.map((n) => (
+                <Button key={n.href} asChild variant="ghost" className="h-11 justify-start px-3 text-xs font-semibold uppercase text-foreground">
                 <a
-                  key={n.href}
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm uppercase tracking-widest text-muted-foreground"
                 >
                   {n.label}
                 </a>
+                </Button>
               ))}
+              <Button asChild className="col-span-2 mt-2 h-11 sm:hidden">
               <a
                 href={GYM.whatsappHref}
-                className="rounded-full bg-primary px-5 py-2 text-center text-sm font-semibold text-primary-foreground"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 Prenota un allenamento
               </a>
+              </Button>
             </div>
-          </div>
+          </nav>
         )}
       </header>
 
