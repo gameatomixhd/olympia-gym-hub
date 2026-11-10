@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://olympia-gym-hub.lovable.app/sitemap.xml
+Sitemap: https://centrofitnessolympia.it/sitemap.xml

@@ -12,4 +12,5 @@
 - Payment/brand accent colors live as semantic tokens in `src/styles.css` (e.g. `--whatsapp`, `--satispay`); use the token utilities in components instead of hardcoding hex values, so the palette stays themed.
 - Import retouched gym photos as bundled assets so they remain portable when the site is exported to other hosts.
 - Keep membership benefits and transfer-policy values in a browser-safe data module so the promotion and policy section share verifiable facts.
+- Keep share-image tags on the leaf route and serve a 1200×630 panorama rendition from public so absolute custom-domain image URLs work on exported hosts.
 

@@ -42,11 +42,13 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Centro Fitness Olympia | Palestra a Siracusa" },
       { property: "og:description", content: "750 m² di sala pesi, macchinari Panatta, scheda gratuita e istruttori in sala. Scopri la promozione attiva." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://olympia-gym-hub.lovable.app/" },
+      { property: "og:url", content: "https://centrofitnessolympia.it/" },
+      { property: "og:image", content: "https://centrofitnessolympia.it/olympia-panorama-social.jpg" },
+      { name: "twitter:image", content: "https://centrofitnessolympia.it/olympia-panorama-social.jpg" },
       { property: "og:locale", content: "it_IT" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://olympia-gym-hub.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://centrofitnessolympia.it/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -55,8 +57,9 @@ export const Route = createFileRoute("/")({
           "@type": ["ExerciseGym", "HealthClub"],
           name: "Centro Fitness Olympia",
           description: "Palestra a Siracusa di 750 m² dedicata alla sala pesi, con macchinari Panatta, scheda di allenamento gratuita e istruttori sempre presenti.",
-          url: "https://olympia-gym-hub.lovable.app/",
-          logo: "https://olympia-gym-hub.lovable.app/olympia-logo.png",
+          url: "https://centrofitnessolympia.it/",
+          logo: "https://centrofitnessolympia.it/olympia-logo.png",
+          image: "https://centrofitnessolympia.it/olympia-panorama-social.jpg",
           telephone: "+390931703066",
           priceRange: "€",
           address: {
