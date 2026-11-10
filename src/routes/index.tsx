@@ -139,18 +139,17 @@ function Index() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
           <a href="#top" onClick={() => setOpen(false)} className="flex shrink-0 items-center gap-3" aria-label="Centro Fitness Olympia, inizio pagina">
             <img src={logoAsset.url} alt="Logo Centro Fitness Olympia" className="h-12 w-12 shrink-0 rounded-full" />
-            <span className="font-display flex flex-col leading-none">
-              <span className="font-body text-[10px] font-semibold uppercase leading-4 text-muted-foreground">Centro Fitness</span>
-              <span className="text-2xl leading-none text-foreground">OLYMPIA</span>
+            <span className="font-display whitespace-nowrap text-xl leading-none text-foreground sm:text-3xl">
+              Centro Fitness OLYMPIA
             </span>
           </a>
-          <nav aria-label="Menu principale" className="hidden items-center gap-1 xl:flex">
-            {nav.map((n) => (
-              <Button key={n.href} asChild variant="ghost" size="sm" className="px-2 text-xs font-semibold uppercase text-muted-foreground hover:text-foreground">
-                <a href={n.href}>{n.label}</a>
-              </Button>
-            ))}
-          </nav>
+          <div className="hidden min-w-0 items-center gap-3 text-xs text-muted-foreground lg:flex">
+            <MapPin aria-hidden="true" className="h-5 w-5 shrink-0 text-brand-red" />
+            <div>
+              <p className="font-semibold text-foreground">{GYM.address}</p>
+              <p className="mt-1">750 m² · Macchinari Panatta · Scheda gratuita</p>
+            </div>
+          </div>
           <div className="flex shrink-0 items-center gap-2">
           <Button asChild className="hidden h-10 px-4 text-xs font-semibold sm:inline-flex">
           <a
@@ -165,7 +164,7 @@ function Index() {
           <Button
             variant="outline"
             size="icon"
-            className="h-10 w-10 xl:hidden"
+            className="h-10 w-10 md:hidden"
             onClick={() => setOpen((previous) => !previous)}
             aria-label={open ? "Chiudi il menu" : "Apri il menu"}
             aria-expanded={open}
@@ -175,8 +174,17 @@ function Index() {
           </Button>
           </div>
         </div>
+        <nav aria-label="Menu principale" className="hidden border-t border-border/50 md:block">
+          <div className="mx-auto flex h-11 max-w-7xl items-center justify-between gap-1 px-6">
+            {nav.map((n) => (
+              <Button key={n.href} asChild variant="ghost" size="sm" className="px-3 text-xs font-semibold uppercase text-muted-foreground hover:text-foreground">
+                <a href={n.href}>{n.label}</a>
+              </Button>
+            ))}
+          </div>
+        </nav>
         {open && (
-          <nav id="mobile-navigation" aria-label="Menu principale" className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-border/50 bg-background xl:hidden">
+          <nav id="mobile-navigation" aria-label="Menu principale" className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-border/50 bg-background md:hidden">
             <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2 px-4 py-4 sm:px-6">
               {nav.map((n) => (
                 <Button key={n.href} asChild variant="ghost" className="h-11 justify-start px-3 text-xs font-semibold uppercase text-foreground">
@@ -220,7 +228,7 @@ function Index() {
 
         
 
-        <div className="relative mx-auto grid max-w-7xl gap-5 px-6 pt-28 pb-12 md:pb-16 text-brand-white">
+        <div className="relative mx-auto grid max-w-7xl gap-5 px-6 pt-28 pb-12 md:pt-40 md:pb-16 text-brand-white">
           <Reveal delay={0} className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-brand-white/70">
             <MapPin className="h-4 w-4 text-brand-red" /> Siracusa, Via Francesco Accolla 36
           </Reveal>
@@ -317,23 +325,6 @@ function Index() {
       </section>
 
       {/* PALESTRA / SALA PESI */}
-      {membershipTransferPolicy.transferable && membershipTransferPolicy.recipient === "anyone" && (
-        <section id="cessione-abbonamento" aria-labelledby="cessione-title" className="border-t border-border/50 bg-ink/40 py-10 md:py-14">
-          <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-center md:gap-8">
-            <ArrowRightLeft aria-hidden="true" className="h-10 w-10 shrink-0 text-brand-red" />
-            <div className="min-w-0 flex-1">
-              <h2 id="cessione-title" className="text-3xl md:text-4xl">Il tuo abbonamento <span className="font-bold text-brand-red">puoi cederlo a chi vuoi</span></h2>
-              <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                Se non vuoi o non puoi più venire in palestra, puoi cedere tranquillamente il tuo abbonamento a chi vuoi.
-              </p>
-            </div>
-            <Button asChild variant="outline" className="h-auto self-start whitespace-normal rounded-full border-brand-red/50 px-5 py-3 text-sm font-bold uppercase md:shrink-0 md:self-auto">
-              <a href={GYM.whatsappInfoHref} target="_blank" rel="noreferrer"><WhatsAppIcon className="h-4 w-4" /> Chiedi informazioni</a>
-            </Button>
-          </div>
-        </section>
-      )}
-
       <section id="palestra" className="border-t border-border/50 py-12 md:py-16">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2 md:items-center">
           <Reveal variant="left" className="relative">
@@ -481,8 +472,22 @@ function Index() {
             </Reveal>
           ))}
         </div>
-        <Reveal className="mx-auto mt-4 max-w-7xl px-6">
-          <div className="flex flex-col items-start gap-4 rounded-xl border border-satispay/45 bg-satispay/10 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto mt-4 grid max-w-7xl gap-3 px-6 lg:grid-cols-2">
+          {membershipTransferPolicy.transferable && membershipTransferPolicy.recipient === "anyone" && (
+            <div id="cessione-abbonamento" aria-labelledby="cessione-title" className="flex flex-col items-start gap-3 border-l-4 border-brand-red bg-brand-red/15 px-5 py-4">
+              <div className="flex items-start gap-3">
+                <ArrowRightLeft aria-hidden="true" className="mt-1 h-7 w-7 shrink-0 text-brand-red" />
+                <div>
+                  <h3 id="cessione-title" className="text-2xl font-bold text-brand-red md:text-3xl">Puoi cedere l’abbonamento a chi vuoi</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground">Se non vuoi o non puoi più venire in palestra, puoi cedere tranquillamente il tuo abbonamento a chi vuoi.</p>
+                </div>
+              </div>
+              <Button asChild variant="outline" size="sm" className="mt-auto border-brand-red/50 bg-transparent text-xs font-bold uppercase">
+                <a href={GYM.whatsappInfoHref} target="_blank" rel="noreferrer"><WhatsAppIcon className="h-4 w-4" /> Chiedi informazioni</a>
+              </Button>
+            </div>
+          )}
+          <div className="flex flex-col items-start gap-3 border-l-4 border-satispay bg-satispay/10 px-5 py-4">
             <div className="flex items-start gap-3">
               <SatispayIcon className="mt-1 h-6 w-6 shrink-0 text-satispay-logo" />
               <div>
@@ -494,16 +499,11 @@ function Index() {
                 </p>
               </div>
             </div>
-            <a
-              href={GYM.whatsappInfoHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-satispay/60 px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-satispay transition-colors hover:bg-satispay hover:text-primary-foreground"
-            >
-              <WhatsAppIcon className="h-4 w-4" /> Chiedi come fare
-            </a>
+            <Button asChild variant="outline" size="sm" className="mt-auto border-satispay/60 bg-transparent text-xs font-bold uppercase text-satispay hover:bg-satispay hover:text-primary-foreground">
+              <a href={GYM.whatsappInfoHref} target="_blank" rel="noreferrer"><WhatsAppIcon className="h-4 w-4" /> Chiedi come fare</a>
+            </Button>
           </div>
-        </Reveal>
+        </div>
       </section>
 
 
