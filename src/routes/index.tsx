@@ -17,6 +17,7 @@ import { useState } from "react";
 import { Reveal, useParallax } from "@/components/Reveal";
 import { InstagramSection, InstagramIcon, INSTAGRAM_URL } from "@/components/InstagramSection";
 import { PromoBenefits } from "@/components/PromoBenefits";
+import { PromoCountdown } from "@/components/PromoCountdown";
 import { Button } from "@/components/ui/button";
 import { membershipTransferPolicy } from "@/lib/membership-benefits";
 
@@ -271,28 +272,33 @@ function Index() {
       {/* PROMO */}
       <section id="promo" className="relative scroll-mt-20 py-10 md:py-14">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="relative overflow-hidden rounded-2xl border-2 border-brand-red bg-gradient-to-br from-brand-red/25 via-card to-card shadow-[var(--shadow-glow)]">
-            <div className="grid gap-6 p-5 md:grid-cols-[minmax(0,260px)_1fr] md:items-center md:gap-10 md:p-8">
+          <div className="relative overflow-hidden rounded-2xl border-2 border-brand-red bg-gradient-to-br from-brand-red/35 via-card to-card shadow-[0_0_80px_-10px_oklch(0.62_0.22_25/0.55)] ring-4 ring-brand-red/20">
+            <div className="absolute inset-x-0 top-0 z-10 flex justify-center">
+              <div className="animate-pulse rounded-b-xl bg-brand-red px-5 py-1.5 text-[11px] font-bold uppercase tracking-[0.3em] text-primary-foreground shadow-lg">
+                Offerta speciale Black Friday
+              </div>
+            </div>
+            <div className="grid gap-6 p-5 pt-10 md:grid-cols-[minmax(0,260px)_1fr] md:items-center md:gap-10 md:p-8 md:pt-12">
               <img
-                src="/promo-novembre.jpeg"
-                alt="Locandina promozione novembre: 5 mesi più novembre e dicembre in regalo a 59 euro, senza vincoli di giorni e orari, valida fino al 30 novembre 2026"
+                src="/promo-black-friday.jpg"
+                alt="Locandina Black Friday Olympia: 6 mesi a 49 euro, valida dal 23 al 30 novembre 2026, senza vincoli di giorni e orari, pagabile in 3 rate con Satispay"
                 className="mx-auto max-h-72 w-auto rounded-xl object-contain md:max-h-80"
                 loading="eager"
               />
               <div className="min-w-0">
                 <div className="inline-flex items-center gap-2 rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-white" /> Promo attiva fino al 30 novembre 2026
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-white" /> Valida dal 23 al 30 novembre 2026
                 </div>
                 <h2 className="mt-4 text-4xl md:text-6xl">
-                  5 mesi <span className="text-brand-red font-bold">+ novembre e dicembre in regalo</span>
+                  Black Friday: <span className="text-brand-red font-bold">6 mesi a solo €49</span>
                 </h2>
-                <div className="mt-2 font-display text-5xl text-brand-red md:text-6xl">€59</div>
-                <p className="mt-1 text-xs font-bold uppercase tracking-widest text-foreground md:text-sm">
+                <p className="mt-2 text-xs font-bold uppercase tracking-widest text-foreground md:text-sm">
                   Senza vincoli di giorni e orari
                 </p>
                 <p className="mt-3 max-w-xl text-sm text-muted-foreground md:text-base">
-                  Scopri tutti i vantaggi della nostra A.S.D.: vienici a trovare e diventa nostro tesserato. Chiamaci o scrivici su WhatsApp per iniziare.
+                  L'offerta più speciale dell'anno: pochi giorni per iscriverti a un prezzo mai visto. Chiamaci o scrivici su WhatsApp per bloccare la tua promozione.
                 </p>
+                <PromoCountdown />
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                   <a
                     href={GYM.whatsappInfoHref}
